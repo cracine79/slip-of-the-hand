@@ -21,6 +21,7 @@ In A Slip of the Hand, users will be able to:
   <li>See a demonstration of a slip of the hand on the explanation homepage</li>
   <li>Choose a tab to see a further explanation of Slip of the Hand Rules (e.g. no crossovers, treatment of shift and CAPS LOCK)</li>
   <li>Enter in a word or phrase and have returned all possible resulting Slips of the Hand</li>
+  <li>See animated hands on the screen typing the letters in real time as they are entered  on the keyboard</li>l
   <li>Order/group the resulting list of Slips of the Hand by category</li>
   <li>See a demonstration of how their original word resulted in the returned Slips of the Hand with the relevant hand mispositioning</li>
 </ul>
@@ -36,6 +37,31 @@ In addition, this project will also strive to include:
 ![Wireframe1](https://github.com/cracine79/slip-of-the-hand/blob/main/Index.jpg)
 
 ![Wireframe2](https://github.com/cracine79/slip-of-the-hand/blob/main/Result.png)
+
+##Tehnolgoies, Libraries, APISs
+
+The project will use the datamuse api available at https://www.datamuse.com/api/ as the source for finding qualifying words.  
+
+If the bonus feature (described below) permitting users to click on returned words to get defintions is activated, this will also require a dictionary API with definitions, such as Free Dictionary API which is available at https://dictionaryapi.dev/
+
+## Implementation Timeline
+
+<ul>
+  <li>Thursday:   Setup project.  Figure out how translate a word into key strokes for left and right hands, and devise algorithm to search for all possible Slips of the Hand.  Write scripts to perform tasks & make work with simple dictionary.</li>
+  <li>Friday:  Setup interface to accept word/phrase from user, query API & return array of slips of the hand </li>
+  <li>Saturday: Introduction Window, Explanation & Animation Slip of the Hand Example</li>
+  <li>Sunday:  Organizing results into separate displays according to category.  Formatting & styling of page & background.  
+  <li>Monday:  Create function to cycle through automated animations of resulting slips of the hand</li>
+  <li>Tuesday: Work on function where animated hands on screen type at same time as user presses keys</li>
+  <li>Wednesday: Bonus Feature? Definitions?  Additional styling & formatting?  Bug fix?</li>
+</ul>
+
+
+## Bonus Features
+In the unlikely event that all of the above described features are pulled off effortlessly, it could be interesting to add a function where users can click on the returned words and be provided definitions, especially given the possibility that some words may have only very obscure words as viable Slips of the Hand. 
+
+If it turns out that there are actually far fewer slips of the hand than estimated, to the point where this is no longer an interesting app, the function could be expanded to consider simple typos as well, where only one finger hits an adjacent button, thereby creating a real word (A Slip of the Finger, if you will!)
+
 
 
 
