@@ -62,7 +62,7 @@ class Word {
                 leftPattern[i] = undefined;
             }
         }
-        debugger;
+      
         return leftPattern;
     }
 
@@ -70,12 +70,10 @@ class Word {
     allRightPatterns = () => {
         const rightPattern = this.toRightPattern();
         const allTheRightPatterns = [];
-        debugger;
-        
+
         this.DIRS.forEach((dir) => {
             let subArr = [];
             for(let i = 0; i< rightPattern.length; i++){
-                debugger;
                 if (rightPattern[i] === undefined){
                     subArr[i] = undefined;
                 } else {
@@ -93,7 +91,6 @@ class Word {
         
         this.DIRS.forEach((dir) => {
             let subArr = [];
-            debugger;
             
             for(let i = 0; i< leftPattern.length; i++){
                 if (leftPattern[i] === undefined){
@@ -105,6 +102,26 @@ class Word {
             allTheLeftPatterns.push(subArr)
         })
         return allTheLeftPatterns;
+    }
+
+    allPatternsCompiled(){
+        const alp = this.allLeftPatterns();
+        const arp = this.allRightPatterns();
+        const allPatternsBothHands = [];
+        for(let i = 0; i<alp.length; i++){
+            for(let j = 0; j<alp.length; j++){
+                let innerArray = [];
+                for (let k = 0; k<alp[0].length; k++){
+                    if(alp[i][k]!==undefined){
+                        innerArray.push(alp[i][k]);
+                    } else {
+                        innerArray.push(arp[i][k]);
+                    }
+                }
+                allPatternsBothHands.push(innerArray);
+            }
+        }
+        return allPatternsBothHands;
     }
 
 

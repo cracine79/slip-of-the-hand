@@ -9,6 +9,7 @@ fn1()
 
 
 let word = new Word("frozen");
+word.allPatternsCompiled();
 
 // const dataMuseUrl = "https://api.datamuse.com/words?sp=brig*"
 // fetch(dataMuseUrl)
@@ -29,10 +30,12 @@ let word = new Word("frozen");
 
 
 
-let alp = word.allLeftPatterns();
-let arp = word.allRightPatterns();
-console.log(arp)
-console.log(alp)
+// let alp = word.allLeftPatterns();
+// let arp = word.allRightPatterns();
+// console.log(arp)
+// console.log(alp)
+
+console.log(word.allPatternsCompiled())
 
 
 
