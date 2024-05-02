@@ -44,33 +44,36 @@ class Word {
         for(let i = 0; i<this.positionArr.length; i++){
             if (this.positionArr[i][1]>5){
                 rightPattern[i] = this.positionArr[i]
+            } else {
+                rightPattern[i] = undefined;
             }
         }
+   
         return rightPattern;
     }
 
 
     toLeftPattern(){
-        const leftPattern = {};
+        const leftPattern = [];
         for(let i = 0; i<this.positionArr.length; i++){
             if (this.positionArr[i][1]<=5){
                 leftPattern[i] = this.positionArr[i];
+            } else {
+                leftPattern[i] = undefined;
             }
         }
+        debugger;
         return leftPattern;
     }
 
 
     allRightPatterns = () => {
         const rightPattern = this.toRightPattern();
-        const allRightPatterns = [];
-        let subArr = [];
-
-
-
+        const allTheRightPatterns = [];
+        debugger;
+        
         this.DIRS.forEach((dir) => {
-
-
+            let subArr = [];
             for(let i = 0; i< rightPattern.length; i++){
                 debugger;
                 if (rightPattern[i] === undefined){
@@ -79,10 +82,33 @@ class Word {
                     subArr[i] = ([rightPattern[i][0]+dir[0], rightPattern[i][1]+dir[1]]);
                 }
             }
-            allRightPatterns.push(subArr)
+            allTheRightPatterns.push(subArr)
         })
-        return allRightPatterns;
+        return allTheRightPatterns;
     }
+
+    allLeftPatterns = () => {
+        const leftPattern = this.toLeftPattern();
+        const allTheLeftPatterns = [];
+        
+        this.DIRS.forEach((dir) => {
+            let subArr = [];
+            debugger;
+            
+            for(let i = 0; i< leftPattern.length; i++){
+                if (leftPattern[i] === undefined){
+                    subArr[i] = undefined;
+                } else {
+                    subArr[i] = ([leftPattern[i][0]+dir[0], leftPattern[i][1]+dir[1]]);
+                }
+            }
+            allTheLeftPatterns.push(subArr)
+        })
+        return allTheLeftPatterns;
+    }
+
+
+  
 }
 
 

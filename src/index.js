@@ -8,12 +8,12 @@ console.log("entry point working!")
 fn1()
 
 
-let word = new Word("friendly");
+let word = new Word("frozen");
 
-const dataMuseUrl = "https://api.datamuse.com/words?sp=brig*"
-fetch(dataMuseUrl)
-    .then(response => {return response.json()})
-    .then(data => {console.log(data)})
+// const dataMuseUrl = "https://api.datamuse.com/words?sp=brig*"
+// fetch(dataMuseUrl)
+//     .then(response => {return response.json()})
+//     .then(data => {console.log(data)})
 
 
 // console.log(word)
@@ -26,6 +26,13 @@ fetch(dataMuseUrl)
 // console.log("right pattern")
 // const rightPattern = word.toRightPattern();
 // console.log(rightPattern);
-// console.log(word.allRightPatterns())
+
+
+
+let alp = word.allLeftPatterns();
+let arp = word.allRightPatterns();
+console.log(arp)
+console.log(alp)
+
 
 
