@@ -44,6 +44,10 @@ The project will use the datamuse api available at https://www.datamuse.com/api/
 
 If the bonus feature (described below) permitting users to click on returned words to get defintions is activated, this will also require a dictionary API with definitions, such as Free Dictionary API which is available at https://dictionaryapi.dev/
 
+Webpack and Babel to bundle and transpile the source JavaScript code
+
+npm to manage project dependencies
+
 ## Implementation Timeline
 
 <ul>
