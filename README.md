@@ -33,6 +33,7 @@ In addition, this project will also strive to include:
 
 ## Wireframes
 
+![Wireframe1](https://raw.githubusercontent.com/cracine79/slip-of-the-hand/main/.github/index.jpg)
 
 
 
