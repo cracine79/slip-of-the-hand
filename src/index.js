@@ -8,14 +8,15 @@ console.log("entry point working!")
 fn1()
 
 
-let word = new Word("jot");
+let word = new Word("got");
 // word.allPatternsCompiled();
+let sloths = word.allPossibleSloths();
+// console.log(sloths)
 
-
-
-// fetch(dataMuseUrl)
-//     .then(response => {return response.json()})
-//     .then(data => {console.log(data)})
+const dataMuseUrl = `https://api.datamuse.com/words?sp=${sloths[43]}`
+fetch(dataMuseUrl)
+    .then(response => {return response.json()})
+    .then(data => {console.log(data)})
 
 
 
@@ -37,8 +38,8 @@ let word = new Word("jot");
 // console.log(arp)
 // console.log(alp)
 
-console.log(word.allPatternsCompiled()[0])
-console.log(word.allPossibleSloths())
+// console.log(word.allPatternsCompiled()[0])
+// console.log(word.allPossibleSloths())
 
 
 

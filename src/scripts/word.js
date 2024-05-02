@@ -134,8 +134,8 @@ class Word {
   
     static patternToWord(pattern){
         const arr = [];
-        const alphabet="abcdefghijklmnopqrstuvwxyz ".split("");
-        debugger;
+        const alphabet="abcdefghijklmnopqrstuvwxyz 1234567890-=`,./;'[]".split("");
+
         let caps = false; 
 
         pattern.forEach((pos)=>{
