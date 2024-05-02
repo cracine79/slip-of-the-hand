@@ -21,7 +21,7 @@ In A Slip of the Hand, users will be able to:
   <li>See a demonstration of a slip of the hand on the explanation homepage</li>
   <li>Choose a tab to see a further explanation of Slip of the Hand Rules (e.g. no crossovers, treatment of shift and CAPS LOCK)</li>
   <li>Enter in a word or phrase and have returned all possible resulting Slips of the Hand</li>
-  <li>See animated hands on the screen typing the letters in real time as they are entered  on the keyboard</li>l
+  <li>See animated hands on the screen typing the letters in real time as they are entered  on the keyboard</li>
   <li>Order/group the resulting list of Slips of the Hand by category</li>
   <li>See a demonstration of how their original word resulted in the returned Slips of the Hand with the relevant hand mispositioning</li>
 </ul>
@@ -58,6 +58,8 @@ If the bonus feature (described below) permitting users to click on returned wor
 
 
 ## Bonus Features
+The initial plan is for slips of the hand to only permit single words and return single words with numbers.  If this is all implemented well, the next logical step is to include the possibility for phrases & spaces, and possibly later on the shift, capslock, and numbers button. 
+
 In the unlikely event that all of the above described features are pulled off effortlessly, it could be interesting to add a function where users can click on the returned words and be provided definitions, especially given the possibility that some words may have only very obscure words as viable Slips of the Hand. 
 
 If it turns out that there are actually far fewer slips of the hand than estimated, to the point where this is no longer an interesting app, the function could be expanded to consider simple typos as well, where only one finger hits an adjacent button, thereby creating a real word (A Slip of the Finger, if you will!)
