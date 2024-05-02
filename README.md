@@ -38,11 +38,15 @@ In addition, this project will also strive to include:
 
 ![Wireframe2](https://github.com/cracine79/slip-of-the-hand/blob/main/Result.png)
 
-##Tehnolgoies, Libraries, APISs
+## Technologies, Libraries, APISs
 
 The project will use the datamuse api available at https://www.datamuse.com/api/ as the source for finding qualifying words.  
 
 If the bonus feature (described below) permitting users to click on returned words to get defintions is activated, this will also require a dictionary API with definitions, such as Free Dictionary API which is available at https://dictionaryapi.dev/
+
+Webpack and Babel to bundle and transpile the source JavaScript code
+
+npm to manage project dependencies
 
 ## Implementation Timeline
 
