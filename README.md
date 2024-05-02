@@ -35,6 +35,8 @@ In addition, this project will also strive to include:
 
 ![Wireframe1](https://github.com/cracine79/slip-of-the-hand/blob/main/Index.jpg)
 
+![Wireframe2](https://github.com/cracine79/slip-of-the-hand/blob/main/Result.png)
+
 
 
 
