@@ -3,7 +3,7 @@
 
 ## Background
 
-A Slip of the Hand occurs when one attempts to type a word or phrase into a keyboard, but with one or both hands mispositioned, accidentally resulting in a different, but real word or phrase. For example, if you were trying to type the word "DEWS" into the keyboard, but your left hand happened to be mistakenly mispositioned one key to the right, this would result in you typing the word "FRED."  In this example, the word requires only one hand to type (all keys are left hand keys), and as such only one hand is mispositioned.  We could have other variations of slips of the hand where only one hand is mispositioned, but the word requires both hands to type, for example "GRIN" and "GRUB", where the left hand is positioned correctly, thus typing out "GR", but the right hand is mispositioned by one key position to the left.  Or a more eggregious example could be "GOD" and "TIE", where the left hand is mispositioned one key upwards, and the right hand is mispositioned one key to the left.
+A Slip of the Hand occurs when one attempts to type a word or phrase into a keyboard, but with one or both hands mispositioned, accidentally resulting in a different, but real word or phrase. For example, if you were trying to type the word   ***DEWS*** into the keyboard, but your left hand happened to be mistakenly mispositioned one key to the right, this would result in you typing the word ***FRED***.  In this example, the word requires only one hand to type (all keys are left hand keys), and as such only one hand is mispositioned.  We could have other variations of slips of the hand where only one hand is mispositioned, but the word requires both hands to type, for example ***GRIN*** and ***GRUB***, where the left hand is positioned correctly, thus typing out "GR", but the right hand is mispositioned by one key position to the left.  Or a more eggregious example could be ***GOD*** and ***TIE***, where the left hand is mispositioned one key upwards, and the right hand is mispositioned one key to the left.
 
 Slips of the Hand can be categorized as follows:
 
@@ -26,7 +26,13 @@ In A Slip of the Hand, users will be able to:
 </ul>
 
 In addition, this project will also strive to include:
-  
+<ul>
+  <li>A live update of the current Slips of the Hand as the user enters letters into the form entry</li>
+  <li> A README explaining the functions of the app and the implementation of logic in the code</li>
+</ul>
+
+## Wireframes
+
 
 
 
