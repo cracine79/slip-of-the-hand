@@ -8,6 +8,11 @@ class Word {
                 ["caps lock"].concat("ASDFGHJKL;'".split("")), 
                 ["shift"].concat("ZXCVBNM,./".split("")).concat(["shift"])
                 ]
+
+    DIRS = [[-1, 1], [0, 1], [1, 1],
+            [-1, 0], [0,0], [-1, 0],
+            [-1, -1], [0, -1], [1, -1]];
+           
     
     constructor(value){
         this.value = value.toUpperCase();
@@ -56,7 +61,28 @@ class Word {
     }
 
 
+    allRightPatterns = () => {
+        const rightPattern = this.toRightPattern();
+        const allRightPatterns = [];
+        let subArr = [];
 
+
+
+        this.DIRS.forEach((dir) => {
+
+
+            for(let i = 0; i< rightPattern.length; i++){
+                debugger;
+                if (rightPattern[i] === undefined){
+                    subArr[i] = undefined;
+                } else {
+                    subArr[i] = ([rightPattern[i][0]+dir[0], rightPattern[i][1]+dir[1]]);
+                }
+            }
+            allRightPatterns.push(subArr)
+        })
+        return allRightPatterns;
+    }
 }
 
 
