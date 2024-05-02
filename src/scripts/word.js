@@ -11,6 +11,7 @@ class Word {
     
     constructor(value){
         this.value = value.toUpperCase();
+        this.positionArr = this.toFullPattern();
     }
 
     toFullPattern() {
@@ -29,8 +30,29 @@ class Word {
                 }
             }
         }
-
         return positionArr;
+    }
+
+    toRightPattern(){
+        const rightPattern = [];
+
+        for(let i = 0; i<this.positionArr.length; i++){
+            if (this.positionArr[i][1]>5){
+                rightPattern[i] = this.positionArr[i]
+            }
+        }
+        return rightPattern;
+    }
+
+
+    toLeftPattern(){
+        const leftPattern = {};
+        for(let i = 0; i<this.positionArr.length; i++){
+            if (this.positionArr[i][1]<=5){
+                leftPattern[i] = this.positionArr[i];
+            }
+        }
+        return leftPattern;
     }
 
 

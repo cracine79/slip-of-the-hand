@@ -12,4 +12,10 @@ let word = new Word("hello");
 
 // console.log(word)
 console.log(word.KEYBOARD)
-console.log(word.toFullPattern())
+const chopped = word.toFullPattern()
+console.log(chopped)
+console.log("left")
+console.log(word.toLeftPattern())
+console.log("right pattern")
+console.log(word.toRightPattern())
+
