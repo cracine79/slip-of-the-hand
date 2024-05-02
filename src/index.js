@@ -8,13 +8,15 @@ console.log("entry point working!")
 fn1()
 
 
-let word = new Word("frozen");
-word.allPatternsCompiled();
+let word = new Word("jot");
+// word.allPatternsCompiled();
 
-// const dataMuseUrl = "https://api.datamuse.com/words?sp=brig*"
+
+
 // fetch(dataMuseUrl)
 //     .then(response => {return response.json()})
 //     .then(data => {console.log(data)})
+
 
 
 // console.log(word)
@@ -35,7 +37,8 @@ word.allPatternsCompiled();
 // console.log(arp)
 // console.log(alp)
 
-console.log(word.allPatternsCompiled())
+console.log(word.allPatternsCompiled()[0])
+console.log(word.allPossibleSloths())
 
 
 

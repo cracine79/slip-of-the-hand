@@ -1,12 +1,18 @@
-
+   const KEYBOARD  = ["1234567890-=".split(""),
+                ["tab"].concat("qwertyuiop[]".split("")), 
+                ["caps lock"].concat("asdfghjkl;'".split("")), 
+                ["shift"].concat("zxcvbnm,./".split("")).concat(["shift"]),
+                ["","",""," ", " ", " ", " ", " ", " ", "", "", ""]
+                ]
 
 
 class Word {
     
     KEYBOARD  = ["1234567890-=".split(""),
-                ["tab"].concat("QWERTYUIOP[]".split("")), 
-                ["caps lock"].concat("ASDFGHJKL;'".split("")), 
-                ["shift"].concat("ZXCVBNM,./".split("")).concat(["shift"])
+                ["tab"].concat("qwertyuiop[]".split("")), 
+                ["caps lock"].concat("asdfghjkl;'".split("")), 
+                ["shift"].concat("zxcvbnm,./".split("")).concat(["shift"]),
+                ["","",""," ", " ", " ", " ", " ", " ", "", "", ""]
                 ]
 
     DIRS = [[-1, 1], [0, 1], [1, 1],
@@ -15,7 +21,7 @@ class Word {
            
     
     constructor(value){
-        this.value = value.toUpperCase();
+        this.value = value.toLowerCase();
         this.positionArr = this.toFullPattern();
     }
 
@@ -108,6 +114,7 @@ class Word {
         const alp = this.allLeftPatterns();
         const arp = this.allRightPatterns();
         const allPatternsBothHands = [];
+
         for(let i = 0; i<alp.length; i++){
             for(let j = 0; j<alp.length; j++){
                 let innerArray = [];
@@ -115,17 +122,44 @@ class Word {
                     if(alp[i][k]!==undefined){
                         innerArray.push(alp[i][k]);
                     } else {
-                        innerArray.push(arp[i][k]);
+                        innerArray.push(arp[j][k]);
                     }
                 }
                 allPatternsBothHands.push(innerArray);
             }
         }
+  
         return allPatternsBothHands;
+    }
+  
+    static patternToWord(pattern){
+        const arr = [];
+        const alphabet="abcdefghijklmnopqrstuvwxyz ".split("");
+        debugger;
+        let caps = false; 
+
+        pattern.forEach((pos)=>{
+            const char = KEYBOARD[pos[0]][pos[1]]
+            debugger;
+            if (alphabet.includes(char)){
+                arr.push(char)
+            };
+        })
+        return arr.join("")
+    }
+
+    allPossibleSloths(){
+        const allPatsCompiled = this.allPatternsCompiled();
+   
+        const allWordsCompiled = [];
+        allPatsCompiled.forEach((pat)=>{
+            allWordsCompiled.push(Word.patternToWord(pat))
+        })
+        return allWordsCompiled;
     }
 
 
-  
+    
 }
 
 
