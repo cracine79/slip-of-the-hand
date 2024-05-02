@@ -10,8 +10,27 @@ class Word {
                 ]
     
     constructor(value){
-        this.value = value;
-       
+        this.value = value.toUpperCase();
+    }
+
+    toFullPattern() {
+        const positionArr = [];
+        let arr = [];
+        arr = this.value.split("");
+        for (let i=0; i< arr.length; i++){
+         
+            for (let j=0; j<4; j++){
+      
+                for(let k = 0; k<(this.KEYBOARD[j].length); k++){
+                   
+                    if(arr[i] === this.KEYBOARD[j][k]){
+                        positionArr.push([j,k])
+                    }
+                }
+            }
+        }
+
+        return positionArr;
     }
 
 
