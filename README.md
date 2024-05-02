@@ -38,7 +38,7 @@ In addition, this project will also strive to include:
 
 ![Wireframe2](https://github.com/cracine79/slip-of-the-hand/blob/main/Result.png)
 
-##Tehnolgoies, Libraries, APISs
+## Technologies, Libraries, APISs
 
 The project will use the datamuse api available at https://www.datamuse.com/api/ as the source for finding qualifying words.  
 
