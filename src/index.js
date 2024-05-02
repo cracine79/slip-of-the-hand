@@ -12,13 +12,20 @@ let word = new Word("got");
 // word.allPatternsCompiled();
 let sloths = word.allPossibleSloths();
 // console.log(sloths)
+const slothArray = [];
 
-const dataMuseUrl = `https://api.datamuse.com/words?sp=${sloths[43]}`
-fetch(dataMuseUrl)
-    .then(response => {return response.json()})
-    .then(data => {console.log(data)})
-
-
+sloths.forEach(async function fetchWord(word){
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+    if (response.ok){
+        return response.json().then((wordDef) => slothArray.push(wordDef))
+    }
+    
+    // let dataMuseUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+    // fetch(dataMuseUrl)
+    //     .then(response => {return response.json()})
+    //     .then(data => {console.log(data)})
+})
+console.log(slothArray)
 
 // console.log(word)
 // console.log(word.KEYBOARD)
