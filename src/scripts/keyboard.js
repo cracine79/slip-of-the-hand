@@ -1,11 +1,17 @@
+const handleKeyDown = function(event){
+    console.log("key!");
+    "abcdefghijklmnopqrstuvwxyz".split("").forEach((letter) => {
+        if (event.key === letter){
+            keyboard.className = `${letter}_pressed`
+        }
+    })
+   
+}
 
 
 const keyboard = document.getElementById('keyboard');
 
-keyboard.addEventListener("keypress", handleKeyPress);
+addEventListener("keydown", handleKeyDown);
+addEventListener("keyup", e => keyboard.className = "unpressed")
 
-const handleKeyPress = (e) => {
-    if (e.key === "a"){
-        keyboard.className = ".a_pressed"
-    }
-}
+export {handleKeyDown}

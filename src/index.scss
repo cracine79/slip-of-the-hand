@@ -12,6 +12,7 @@ h1, h2, p, strong, em, a {
   text-align: inherit;
   color: inherit;
   background: transparent;
+  border: none;
 }
 
 
@@ -27,30 +28,65 @@ body {
 
 #wrapper {
     width: 100%;
-    height: 700px;
-    border: solid black;
+    height: 870px;
+    border: none;
     display: flex;
     justify-content: center;
+    padding-top: 25px;
 }
 
 #innerbox {
-    width: 800px;
+    width: 1000px;
     height: 100%;
-    background-color: white;
+    border: none;
+ 
 
     display: flex;
     flex-direction: column;
     justify-content: end;
+    align-items: center;
     
  
 }
 
 #keyboard {
-    width: 100%;
-    height: 278px;
-    
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 350px;
+    background-size: 800px, 308px;
     opacity: 100%;
+    border: none;
 }
+
+#monitor {
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 720px;
+    background-size: 550px, 720px;
+    opacity: 100%;
+    background-image :url(../images/Computer.png);
+    border: none;
+}
+
+#inner-monitor {
+    margin-left: 100px;
+    margin-top: 40px;
+    width: 420px;
+    height: 330px;
+    display: flex;
+}
+
+#entry-box {
+    height: 20px;
+    width: 200px;
+    margin-top: 260px;
+    margin-left: 20px;
+}
+
+#submit {
+ width: 150px;
+}
+
 
 .unpressed {
     background-image: url(../images/keyboard/Keyboard.png);
@@ -72,7 +108,6 @@ body {
     background-image: url(../images/keyboard/e_pressed.png);
 }
 
-
 .r_pressed {
     background-image: url(../images/keyboard/r_pressed.png);
 }
@@ -90,11 +125,9 @@ body {
 }
 
 
-
 .i_pressed {
     background-image: url(../images/keyboard/i_pressed.png);
 }
-
 
 .o_pressed {
     background-image: url(../images/keyboard/o_pressed.png);
@@ -112,11 +145,6 @@ body {
     background-image: url(../images/keyboard/d_pressed.png);
 }
 
-
-
-
-
-
 .f_pressed {
     background-image: url(../images/keyboard/f_pressed.png);
 }
@@ -132,7 +160,6 @@ body {
 .j_pressed {
     background-image: url(../images/keyboard/j_pressed.png);
 }
-
 
 .k_pressed {
     background-image: url(../images/keyboard/k_pressed.png);
@@ -150,12 +177,9 @@ body {
     background-image: url(../images/keyboard/x_pressed.png);
 }
 
-
-
 .c_pressed {
     background-image: url(../images/keyboard/c_pressed.png);
 }
-
 
 .v_pressed {
     background-image: url(../images/keyboard/v_pressed.png);

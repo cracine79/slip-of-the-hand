@@ -1,29 +1,36 @@
 
 
-// import Keyboard from ".scripts/keyboard.js"
+import { handleKeyDown } from "./scripts/keyboard.js"
 import { fn1 } from "./scripts/example.js"
 import Word from "./scripts/word.js"
 import Session from "./scripts/session.js"
+import {handleWord} from "./scripts/form.js"
 
 console.log("entry point working!")
 fn1()
 
 
-const handleKeyDown = function(event){
-    console.log("key!");
-    "abcdefghijklmnopqrstuvwxyz".split("").forEach((letter) => {
-        if (event.key === letter){
-            keyboard.className = `${letter}_pressed`
-        }
-    })
+// const handleKeyDown = function(event){
+//     console.log("key!");
+//     "abcdefghijklmnopqrstuvwxyz".split("").forEach((letter) => {
+//         if (event.key === letter){
+//             keyboard.className = `${letter}_pressed`
+//         }
+//     })
    
-}
+// }
 
-const keyboard = document.getElementById('keyboard');
+// const storeWord = function(event){
+//     event.preventDefault();
+//     const word = form.inputbox.value;
+//     console.log(word)
+// }
 
-addEventListener("keydown", handleKeyDown);
-addEventListener("keyup", e => keyboard.className = "unpressed")
 
+
+
+// const form = document.getElementById('getSloth');
+// form.addEventListener("submit", storeWord);
 
 
 // const session = new Session("hat");
