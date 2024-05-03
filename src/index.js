@@ -9,17 +9,20 @@ console.log("entry point working!")
 fn1()
 
 
-const handleKeyPress = function(event){
+const handleKeyDown = function(event){
     console.log("key!");
-    if (event.key === "a"){
-        keyboard.className = "a_pressed"
-    }
+    "abcdefghijklmnopqrstuvwxyz".split("").forEach((letter) => {
+        if (event.key === letter){
+            keyboard.className = `${letter}_pressed`
+        }
+    })
+   
 }
 
 const keyboard = document.getElementById('keyboard');
 
-addEventListener("keydown", handleKeyPress);
-
+addEventListener("keydown", handleKeyDown);
+addEventListener("keyup", e => keyboard.className = "unpressed")
 
 
 
