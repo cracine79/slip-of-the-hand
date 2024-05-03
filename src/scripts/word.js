@@ -139,8 +139,7 @@ class Word {
         let caps = false; 
 
         pattern.forEach((pos)=>{
-            const char = KEYBOARD[pos[0]][pos[1]]
-            debugger;
+            const char = KEYBOARD[pos[0]][pos[1]];
             if (alphabet.includes(char)){
                 arr.push(char)
             };

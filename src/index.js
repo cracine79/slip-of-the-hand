@@ -3,29 +3,35 @@
 
 import { fn1 } from "./scripts/example.js"
 import Word from "./scripts/word.js"
+import Session from "./scripts/session.js"
 
 console.log("entry point working!")
 fn1()
 
+const session = new Session("big");
+const sloths = session.generateSlothsArray();
 
-let word = new Word("got");
+
+
+
+// let word = new Word("find");
 // word.allPatternsCompiled();
-let sloths = word.allPossibleSloths();
-// console.log(sloths)
-const slothArray = [];
+// let sloths = word.allPossibleSloths();
+// // console.log(sloths)
+// const slothArray = [];
 
-sloths.forEach(async function fetchWord(word){
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-    if (response.ok){
-        return response.json().then((wordDef) => slothArray.push(wordDef))
-    }
+// sloths.forEach(async function fetchWord(word){
+//     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+//     if (response.ok){
+//         return response.json().then((wordDef) => slothArray.push(wordDef))
+//     }
     
     // let dataMuseUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
     // fetch(dataMuseUrl)
     //     .then(response => {return response.json()})
     //     .then(data => {console.log(data)})
-})
-console.log(slothArray)
+// })
+// console.log(slothArray)
 
 // console.log(word)
 // console.log(word.KEYBOARD)
