@@ -1,4 +1,61 @@
+
+
+html, body, section, article,
+h1, h2, p, strong, em, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+
+
 body {
     
     background-image: url(../images/background.png);
+
+   display: block;
+
+
+}
+
+#wrapper {
+    width: 100%;
+    height: 700px;
+    border: solid black;
+    display: flex;
+    justify-content: center;
+}
+
+#innerbox {
+    width: 800px;
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    
+ 
+}
+
+#keyboard {
+    width: 100%;
+    height: 278px;
+    
+    opacity: 100%;
+}
+
+.unpressed {
+    background-image: url(../images/keyboard/Keyboard.png);
+}
+
+.a_pressed {
+    background-image: url(../images/keyboard/apressed.png);
 }

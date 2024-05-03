@@ -8,8 +8,9 @@ import Session from "./scripts/session.js"
 console.log("entry point working!")
 fn1()
 
-const session = new Session("big");
-const sloths = session.generateSlothsArray();
+// const session = new Session("hat");
+// const sloths = session.generateSlothsArray();
+// console.log(sloths)
 
 
 
