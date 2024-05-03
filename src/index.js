@@ -1,12 +1,27 @@
 
 
-
+// import Keyboard from ".scripts/keyboard.js"
 import { fn1 } from "./scripts/example.js"
 import Word from "./scripts/word.js"
 import Session from "./scripts/session.js"
 
 console.log("entry point working!")
 fn1()
+
+
+const handleKeyPress = function(event){
+    console.log("key!");
+    if (event.key === "a"){
+        keyboard.className = "a_pressed"
+    }
+}
+
+const keyboard = document.getElementById('keyboard');
+
+addEventListener("keydown", handleKeyPress);
+
+
+
 
 // const session = new Session("hat");
 // const sloths = session.generateSlothsArray();
