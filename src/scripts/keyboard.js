@@ -1,5 +1,4 @@
 const handleKeyDown = function(event){
-    console.log("key!");
     "abcdefghijklmnopqrstuvwxyz".split("").forEach((letter) => {
         if (event.key === letter){
             keyboard.className = `${letter}_pressed`
