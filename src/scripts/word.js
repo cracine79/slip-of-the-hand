@@ -152,7 +152,9 @@ class Word {
    
         const allWordsCompiled = [];
         allPatsCompiled.forEach((pat)=>{
+            if (Word.patternToWord(pat) !== this.value){
             allWordsCompiled.push(Word.patternToWord(pat))
+            }
         })
         return allWordsCompiled;
     }

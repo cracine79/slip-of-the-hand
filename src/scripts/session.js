@@ -51,9 +51,36 @@ class Session {
 
 
     printSloths(slothArray){
+        const slothList = document.getElementById('sloth-list');
+   
+        const your = document.createElement('li');
+        your.innerHTML = `You entered the word ${this.word.value}`
+        slothList.append(your);
+        
+        if (slothArray.length === 0){
+            const otherSloths = document.createElement('li');
+            otherSloths.innerHTML = `${this.word.value.slice(0,1).toUpperCase()+this.word.value.slice(1)} is a SlotH-less pattern!! NO SLOTH! NO SLOTH!`
+            slothList.append(otherSloths)
+ 
+        } else {
+
+        const otherSloths = document.createElement('li');
+        otherSloths.innerHTML = `If you had mispositioned one or both hands, you might have typed:`
+        slothList.append(otherSloths)
+        
+        
+
         slothArray.forEach((sloth)=>{
-            console.log(sloth[0].word)
+         
+            const li = document.createElement('li');
+            li.innerHTML = sloth[0].word;
+            slothList.appendChild(li);
         })
+
+        }
+        
+   
+       
     }
 
 

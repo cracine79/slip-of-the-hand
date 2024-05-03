@@ -105,20 +105,37 @@ body {
     margin-top: 40px;
     width: 420px;
     height: 330px;
-    display: flex;
-}
+    display: block;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
 
+}
+#text-box{
+    height: 200px;
+    width: 350px;
+    background-color: white;
+    border: solid black 1px;
+    margin-top: 70px;
+    margin-left: 20px;
+}
 #entry-box {
     height: 20px;
     width: 200px;
-    margin-top: 260px;
+    margin-top: 30px;
     margin-left: 20px;
 }
 
 #submit {
  width: 150px;
 }
+#getSloth {
+    height: 30px;
+}
 
+#entry-box {
+    height: 30px;
+}
 
 .unpressed {
     background-image: url(../images/keyboard/Keyboard.png);
