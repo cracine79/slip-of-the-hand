@@ -52,6 +52,7 @@ class Session {
 
     printSloths(slothArray){
         const slothList = document.getElementById('sloth-list');
+        slothList.innerHTML = "";
    
         const your = document.createElement('li');
         your.innerHTML = `You entered the word ${this.word.value}`
