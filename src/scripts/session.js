@@ -53,21 +53,37 @@ class Session {
     printSloths(slothArray){
         const slothList = document.getElementById('sloth-list');
         slothList.innerHTML = "";
+        const intro = document.getElementById('intro-box');
+        intro.innerHTML = "";
    
         const your = document.createElement('li');
-        your.innerHTML = `You entered the word ${this.word.value}`
+        your.id = "youEntered"
+        your.innerHTML = `You entered the word: ${this.word.value}`
         slothList.append(your);
+
+        const brk = document.createElement('li');
+        brk.innerHTML = ".";
+        brk.className="brk"
+        slothList.append(brk)
+      
         
         if (slothArray.length === 0){
             const otherSloths = document.createElement('li');
+            otherSloths.id = "otherSloths"
             otherSloths.innerHTML = `${this.word.value.slice(0,1).toUpperCase()+this.word.value.slice(1)} is a SlotH-less pattern!! NO SLOTH! NO SLOTH!`
             slothList.append(otherSloths)
  
         } else {
 
         const otherSloths = document.createElement('li');
+        otherSloths.id = "otherSloths"
         otherSloths.innerHTML = `If you had mispositioned one or both hands, you might have typed:`
-        slothList.append(otherSloths)
+        slothList.append(otherSloths);
+        
+        const brk2 = document.createElement('li');
+        brk2.innerHTML = ".";
+        brk2.className="brk"
+        slothList.append(brk2)
         
         
 
@@ -75,6 +91,7 @@ class Session {
          
             const li = document.createElement('li');
             li.innerHTML = sloth[0].word;
+            li.id = "slothItem"
             slothList.appendChild(li);
         })
 

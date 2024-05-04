@@ -41,7 +41,6 @@ const handleKeyDown = function(event){
         } else if (event.code === 'Space'){
             event.preventDefault();
             rightHand.id = "rh_space_pressed";
-            leftHand.id="lh_space_pressed";
             keyboard.className = "space_pressed"
         }
     })
