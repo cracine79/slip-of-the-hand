@@ -26,6 +26,7 @@ class macWindow {
         const keyboard = document.getElementById("keyboard");
      
         while (i<letters.length){
+           
             await this.waitForMs(wait); 
             typedOn.append(letters[i]);
             if (letters[i] === " "){
@@ -35,6 +36,7 @@ class macWindow {
             }
             i++
         }
+        await this.waitForMs(wait);
         keyboard.className = "unpressed";
     }
 
@@ -72,7 +74,7 @@ class macWindow {
         const intro2 = "For example, imagine the hands below are trying to type the word  "
         const para2 = document.getElementById("introText2")
         await this.typeWords(intro2, para2);
-        const dry = "DRY  ";
+        const dry = "DRY";
         const drySpot = document.getElementById("dry");
         await this.keysTypeWords(dry, drySpot,700);
         const intro2Cont= " but accidentally started out typing one key position to the left.  This would result in typing the word: "
@@ -81,11 +83,11 @@ class macWindow {
         const set = "SET";
         const setSpot = document.getElementById("set");
         await this.keysTypeWords(set, setSpot,500);
-        await this.waitForMs(500); 
+        await this.waitForMs(1000); 
         const slip= "SLIP OF THE HAND!!"
         const slipSpot = document.getElementById("slip")
         await this.typeWords(slip, slipSpot);
-        await this.waitForMs(500); 
+        await this.waitForMs(1000); 
         const intro3 = "Go ahead, give it a try!  Enter a word of phrase and see what slips of the hand you could have had!"
         const para3 = document.getElementById("introText3");
         await this.typeWords(intro3, para3)
