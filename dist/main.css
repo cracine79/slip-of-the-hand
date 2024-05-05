@@ -57,11 +57,12 @@ table {
 
 @font-face {
   font-family: chicago;
-  src: url(./fonts/ChicagoNormal.ttf);
+  src: url(../fonts/ChicagoNormal.ttf);
 }
 body {
   background-image: url(../images/background.png);
   display: block;
+  font-family: "chicago";
 }
 
 #wrapper {
@@ -118,7 +119,7 @@ body {
 #text-box {
   height: 250px;
   width: 380px;
-  background-color: white;
+  background-image: url(../images/window.png);
   border: solid black 1px;
   margin-top: 20px;
   border-left: -10px;
@@ -143,9 +144,14 @@ ul {
   margin-left: 7px;
 }
 
+#slHeader {
+  margin-left: 10px;
+}
+
 #youEntered {
   font-size: 20px;
   font-family: "chicago";
+  margin-top: 20px;
 }
 
 #otherSloths {
@@ -159,6 +165,8 @@ ul {
 #intro-box {
   margin-left: 10px;
   font-family: "chicago";
+  margin-right: 10px;
+  margin-top: 15px;
 }
 
 .intro {
@@ -167,11 +175,21 @@ ul {
 }
 
 .introText {
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.introTextExample {
+  font-size: 16px;
+  color: red;
 }
 
 .brk {
   color: white;
+}
+
+#list-box {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .leftHand {

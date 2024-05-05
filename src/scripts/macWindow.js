@@ -1,13 +1,13 @@
 import Word from "./word.js"
 
 
-class macWindow {
-
+class MacWindow {
 
     constructor(){
         this.view = document.getElementById("inner-monitor");
         this.form = document.getElementById("getSloth");
         this.innerbox = document.getElementById("innerBox")
+        this.slothList = document.getElementById("sloth-list")
     }
 
     async typeWords(sentence, typedOn, wait = 30){
@@ -147,7 +147,7 @@ class macWindow {
         leftHand.style.paddingLeft = "35px"
         rightHand.style.paddingLeft = "325px"
         await this.waitForMs(500);
-        const intro2ContMore = "This would result in typing the word: "
+        const intro2ContMore = "  This would result in typing the word: "
         await this.typeWords(intro2ContMore, para2Cont);
         const set = "SET";
         const setSpot = document.getElementById("set");
@@ -165,5 +165,14 @@ class macWindow {
 
 }
 
-export default macWindow
+
+
+
+
+export default MacWindow;
+let mWind = new MacWindow();
+mWind.fillIntro()
+
+export { mWind };
+
 
