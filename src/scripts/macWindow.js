@@ -44,27 +44,47 @@ class macWindow {
         keyboard.className = "unpressed";
     }
 
+    
+
     async handsTypeWords(sentence, typedOn, wait = 30, orig){
+        const left = "qwertgfdsazxcvb".split("");
+        const right = "yuiophjklnm".split("")
         const origLetters = new Word(orig);
         const letters = new Word(sentence);
         const origLettersArr = orig.split("");
         const lettersArr = sentence.split("");
-        
-    
-        // const leftHandShift = [leftVertShift, leftHorizShift]
-        // const rightHandShift = [rightVertShift, rightHorizShift]
+        const origPattern = origLetters.toFullPattern();
+        const newPattern = letters.toFullPattern();
+
+        let leftShift = undefined;
+        let rightShift = undefined;
+
+ 
+        for(let i=0; i<origPattern.length; i++){
+            if (left.includes(origLettersArr[i])){
+           
+                const leftVertShift = (newPattern[i][0]-origPattern[i][0])
+                const leftHorizShift = (newPattern[i][1]-origPattern[i][1])
+                leftShift = [leftVertShift, leftHorizShift]
+            } else {
+                const rightVertShift = (newPattern[i][0]-origPattern[i][0])
+                const rightHorizShift = (newPattern[i][1]-origPattern[i][1])
+                rightShift = [rightVertShift, rightHorizShift]
+            }
+        }
 
       
-
         let i = 0;
         const keyboard = document.getElementById("keyboard");
         const leftHand = document.getElementById("lh_unpressed");
         const rightHand = document.getElementById("rh_unpressed");
-        
+            
+        leftHand.style.paddingLeft = `${70+(leftShift[1]*45)}px`
+        leftHand.style.paddingTop = `${100+(leftShift[0]*45)}px`
+        rightHand.style.paddingLeft = `${360+(rightShift[1]*45)}px`
+        rightHand.style.paddingTop = `${100+(rightShift[0]*45)}px`
+
         while (i<lettersArr.length){
-            const left = "qwertgfdsazxcvb".split("");
-            const right = "yuiophjklnm".split("")
- 
         
             typedOn.append(lettersArr[i]);
             if (lettersArr[i] === " "){
@@ -76,12 +96,15 @@ class macWindow {
             }
 
             
-            if (left.includes(lettersArr[i].toLowerCase())){
-                debugger;
-                leftHand.id = `lh_${lettersArr[i].toLowerCase()}_pressed`
+            if (left.includes(origLettersArr[i].toLowerCase())){
+                
+                leftHand.id = `lh_${origLettersArr[i].toLowerCase()}_pressed`
+ 
+             
                 rightHand.id = "rh_unpressed"
-            } else if (right.includes(lettersArr[i].toLowerCase())){
-                rightHand.id = `rh_${lettersArr[i].toLowerCase()}_pressed`
+            } else if (right.includes(origLettersArr[i].toLowerCase())){
+                rightHand.id = `rh_${origLettersArr[i].toLowerCase()}_pressed`
+  
                 leftHand.id = "lh_unpressed"
             }
             await this.waitForMs(wait); 
@@ -90,7 +113,12 @@ class macWindow {
         keyboard.className = "unpressed";
         leftHand.id = `lh_unpressed`;
         rightHand.id = `rh_unpressed`;
+        rightHand.style.paddingLeft = "360px"
+        rightHand.style.paddingTop = "100px"
+        leftHand.style.paddingLeft = "70px"
+        leftHand.style.paddingTop = "100px"
     }
+
 
  
     waitForMs(ms){
@@ -110,9 +138,17 @@ class macWindow {
         const dry = "DRY";
         const drySpot = document.getElementById("dry");
         await this.handsTypeWords(dry, drySpot,700, "dry");
-        const intro2Cont= " but accidentally started out typing one key position to the left.  This would result in typing the word: "
+        const intro2Cont= " but accidentally started out typing one key position to the left."  
         const para2Cont = document.getElementById("introText2Cont")
         await this.typeWords(intro2Cont, para2Cont);
+
+        const leftHand = document.getElementById("lh_unpressed");
+        const rightHand = document.getElementById("rh_unpressed");
+        leftHand.style.paddingLeft = "35px"
+        rightHand.style.paddingLeft = "325px"
+        await this.waitForMs(500);
+        const intro2ContMore = "This would result in typing the word: "
+        await this.typeWords(intro2ContMore, para2Cont);
         const set = "SET";
         const setSpot = document.getElementById("set");
         await this.handsTypeWords(set, setSpot,500, "dry");
