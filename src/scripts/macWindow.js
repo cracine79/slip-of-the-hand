@@ -9,26 +9,36 @@ class macWindow {
     async typeWords(sentence, typedOn, wait = 30){
         const letters = sentence.split("");
         let i = 0;
+        const keyboard = document.getElementById("keyboard");
+        debugger;
         while (i<letters.length){
-            await this.waitForMs(wait);
+            
+    
+            await this.waitForMs(wait); 
             typedOn.append(letters[i]);
+            if (letters[i] === " "){
+                keyboard.className = "space_pressed"
+            } else {
+                keyboard.className = `${letters[i].toLowerCase()}_pressed`
+            }
             i++
         }
+        keyboard.className = "unpressed";
         return
     }
-
+ 
     waitForMs(ms){
-        return new Promise(resolve => setTimeout(resolve, ms))
+        return new Promise(resolve => setTimeout(resolve, ms)) 
     }
 
     async fillIntro(){
-        const head = "Welcome to Slip of the Hand!";
+        const head = "Welcome to Slip of the Hand";
         const welcome = document.getElementById("welcome");
         await this.typeWords(head, welcome)
-        const intro1 = "A Slip of the Hand (SlotH) occurs when you type a word or phrase with one or both hands in the incorrect position, and another word or phrase is typed as a result!"
+        const intro1 = "A Slip of the Hand [SlotH] occurs when you type a word or phrase with one or both hands in the incorrect position, and another word or phrase is typed as a result."
         const para1 = document.getElementById("introText1");
         await this.typeWords(intro1, para1)
-        const intro2 = "For example, imagine the hands below are trying to type the word: "
+        const intro2 = "For example, imagine the hands below are trying to type the word  "
         const para2 = document.getElementById("introText2")
         await this.typeWords(intro2, para2);
         const dry = "DRY  ";
