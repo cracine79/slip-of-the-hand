@@ -55,6 +55,10 @@ table {
   border-spacing: 0;
 }
 
+@font-face {
+  font-family: chicago;
+  src: url(./fonts/ChicagoNormal.ttf);
+}
 body {
   background-image: url(../images/background.png);
   display: block;
@@ -141,24 +145,24 @@ ul {
 
 #youEntered {
   font-size: 20px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "chicago";
 }
 
 #otherSloths {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "chicago";
 }
 
 #slothItem {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "chicago";
 }
 
 #intro-box {
   margin-left: 10px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "chicago";
 }
 
 .intro {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "chicago";
   font-size: 5px;
 }
 
