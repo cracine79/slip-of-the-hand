@@ -78,9 +78,14 @@ class macWindow {
         const intro2Cont= " but accidentally started out typing one key position to the left.  This would result in typing the word: "
         const para2Cont = document.getElementById("introText2Cont")
         await this.typeWords(intro2Cont, para2Cont);
-        const set = "SET  ";
+        const set = "SET";
         const setSpot = document.getElementById("set");
         await this.keysTypeWords(set, setSpot,500);
+        await this.waitForMs(500); 
+        const slip= "SLIP OF THE HAND!!"
+        const slipSpot = document.getElementById("slip")
+        await this.typeWords(slip, slipSpot);
+        await this.waitForMs(500); 
         const intro3 = "Go ahead, give it a try!  Enter a word of phrase and see what slips of the hand you could have had!"
         const para3 = document.getElementById("introText3");
         await this.typeWords(intro3, para3)
