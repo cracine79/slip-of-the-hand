@@ -5,26 +5,6 @@ class Session {
         this.word = new Word(input)
     }
 
-    // async generateSlothsArray(){
-    //     let sloths = this.word.allPossibleSloths();
-    //     const slothArray = [];
-
-    //     for (const word of sloths) {
-        
-    //             const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-    //             if (response.ok) {
-    //                 const wordDef = await response.json();
-    //                 slothArray.push(wordDef);
-    //             } else {
-    //                 console.log(`${word} is not a word`)
-    //             }
-            
-    //     }
-    //     console.log(slothArray);
-    //     console.log(slothArray[0])
-    //     return slothArray;
-    // }
-
     async generateSlothsArray() {
         let sloths = this.word.allPossibleSloths();
         const slothPromises = sloths.map(async (word) => {
@@ -47,8 +27,6 @@ class Session {
         console.log(slothArray.filter(wordDef => wordDef !== null));
         this.printSloths(slothArray.filter(wordDef => wordDef !== null));
     }
-
-
 
     printSloths(slothArray){
         const slothList = document.getElementById('sloth-list');
@@ -96,12 +74,7 @@ class Session {
         })
 
         }
-        
-   
-       
     }
-
-
 }
 
 export default Session

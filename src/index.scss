@@ -109,25 +109,26 @@ body {
     margin-top: 40px;
     width: 420px;
     height: 330px;
-    display: block;
+    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
 
 }
 #text-box{
-    height: 220px;
-    width: 350px;
+    height: 250px;
+    width: 380px;
     background-color: white;
     border: solid black 1px;
-    margin-top: 70px;
-    margin-left: 20px;
+    margin-top: 20px;
+    border-left: -10px;
+    
 }
 #entry-box {
     height: 20px;
     width: 200px;
-    margin-top: 30px;
-    margin-left: 20px;
+    margin-top: 00px;
+ 
 }
 
 #submit {
@@ -137,9 +138,6 @@ body {
     height: 30px;
 }
 
-#entry-box {
-    height: 30px;
-}
 
 ul {
     margin-top: 10px;
