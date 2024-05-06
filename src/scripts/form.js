@@ -9,6 +9,10 @@ function handleWord (event){
     const home = document.getElementById('instructions');
     home.style.display = 'inline'
     session.generateSlothsArray();
+    const header = document.getElementById('slHeader')
+    const listBox = document.getElementById('list-box')
+    listBox.style.display = "flex"
+    header.style.display = "inline"
 }
 
 

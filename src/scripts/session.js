@@ -40,7 +40,7 @@ class Session {
         const slothList3 = document.getElementById('sloth-list3');
         slothList3.innerHTML = "";
         const intro = document.getElementById('intro-box');
-        intro.innerHTML = "";
+        intro.style.display = 'none'
         const slHeader = document.getElementById('slHeader');
         slHeader.innerHTML = "";
 
@@ -190,6 +190,20 @@ lists.addEventListener('click', (e) => {
 let modalWrapper = document.getElementById('modal-wrapper');
 modalWrapper.addEventListener('click', (e) => {
     modalWrapper.style.display = "none"
+})
+
+let instructions = document.getElementById('instructions')
+let introBox = document.getElementById('intro-box');
+
+instructions.addEventListener('click', (e) => {
+    e.preventDefault()
+    const header = document.getElementById('slHeader')
+    const listBox = document.getElementById('list-box')
+    listBox.style.display = "none"
+    header.style.display = "none"
+    introBox.style.display = "block"
+
+
 })
 
 export default Session

@@ -178,8 +178,16 @@ ul {
   margin-left: 7px;
 }
 
-#slHeader {
+#youEntered {
   margin-left: 10px;
+}
+
+#otherSloths {
+  margin-left: 10px;
+}
+
+#slHeader {
+  padding-left: 10px;
 }
 
 #youEntered {
