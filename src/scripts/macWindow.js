@@ -61,25 +61,29 @@ class MacWindow {
 
  
         for(let i=0; i<origPattern.length; i++){
-            if (left.includes(origLettersArr[i])){
-           
-                const leftVertShift = (newPattern[i][0]-origPattern[i][0])
-                const leftHorizShift = (newPattern[i][1]-origPattern[i][1])
+            
+            if (left.includes(origLettersArr[i]) && leftShift === undefined){
+                let leftVertShift = (newPattern[i][0]-origPattern[i][0])
+                let leftHorizShift = (newPattern[i][1]-origPattern[i][1])
                 leftShift = [leftVertShift, leftHorizShift]
-            } else {
-                const rightVertShift = (newPattern[i][0]-origPattern[i][0])
-                const rightHorizShift = (newPattern[i][1]-origPattern[i][1])
+            } else if (rightShift === undefined){
+                let rightVertShift = (newPattern[i][0]-origPattern[i][0])
+                let rightHorizShift = (newPattern[i][1]-origPattern[i][1])
                 rightShift = [rightVertShift, rightHorizShift]
             }
         }
 
+        leftShift ||= [0,0]
+        rightShift ||= [0,0]
+
       
         let i = 0;
         const keyboard = document.getElementById("keyboard");
-        const leftHand = document.getElementById("lh_unpressed");
-        const rightHand = document.getElementById("rh_unpressed");
-            
+        const leftHand = document.getElementsByClassName("leftHand")[0];
+        const rightHand = document.getElementsByClassName("rightHand")[0];
+        
         leftHand.style.paddingLeft = `${70+(leftShift[1]*45)}px`
+        
         leftHand.style.paddingTop = `${100+(leftShift[0]*45)}px`
         rightHand.style.paddingLeft = `${360+(rightShift[1]*45)}px`
         rightHand.style.paddingTop = `${100+(rightShift[0]*45)}px`
@@ -89,7 +93,7 @@ class MacWindow {
             typedOn.append(lettersArr[i]);
             if (lettersArr[i] === " "){
                 keyboard.className = "space_pressed"
-                rightHandShift.id = "rh_space_pressed"
+                rightHand.id = "rh_space_pressed"
 
             } else {
                 keyboard.className = `${lettersArr[i].toLowerCase()}_pressed`

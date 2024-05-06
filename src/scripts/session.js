@@ -10,8 +10,7 @@ class Session {
     async generateSlothsArray() {
         let sloths = this.word.allPossibleSloths();
         let longSloths = sloths.filter(function(el) {return el.length > 1 && !el.includes(" ")})
-        debugger;
-
+       
         const slothPromises = longSloths.map(async (word) => {
             try {
                 const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
@@ -55,8 +54,8 @@ class Session {
         const youEnteredText = `You entered the word: `
         await resultWindow.typeWords(youEnteredText, youEntered);
         const yourWord = `${this.word.value}`
-        resultWindow.handsTypeWords(yourWord, youEntered, 500, yourWord);
-
+        await resultWindow.handsTypeWords(yourWord, youEntered, 500, yourWord)
+      
         const brk = document.createElement('p');
         brk.innerHTML = ".";
         brk.className="brk"
@@ -68,31 +67,34 @@ class Session {
         
         
         if (slothArray.length === 0){
+            slHeader.append(brk2)
             const otherSloths = document.createElement('p');
             otherSloths.id = "otherSloths"
-            slHeader.append(brk2)
-            otherSloths.innerHTML = `${this.word.value.slice(0,1).toUpperCase()+this.word.value.slice(1)} is a SlotH-less pattern!!`
             slHeader.append(otherSloths)
+            const noSloth = `${this.word.value.slice(0,1).toUpperCase()+this.word.value.slice(1)} is a SlotH-less pattern!!`
+            await resultWindow.typeWords(noSloth, otherSloths)
             slHeader.append(brk)
             const celeb = document.createElement('p')
-            celeb.innerHTML = " NO SLOTH! NO SLOTH!"
+            const yayNoSloth = "NO SLOTH! NO SLOTH!"
             slHeader.append(celeb)
+            await resultWindow.typeWords(yayNoSloth, celeb)
 
         } else {
 
             const otherSloths = document.createElement('p');
             otherSloths.id = "otherSloths"
-            otherSloths.innerHTML = `If you had mispositioned one or both hands, you might have typed:`
             slHeader.append(otherSloths);
+            const youMighta = `If you had mispositioned one or both hands, you might have typed:`
+            await resultWindow.typeWords(youMighta, otherSloths)
 
             if (slothArray.length < 9) {
-                slothArray.forEach((sloth)=>{
+                for (const sloth of slothArray) {
                 
                     const li = document.createElement('li');
-                    li.innerHTML = sloth[0].word;
-                    li.id = "slothItem"
+                    const word = sloth[0].word;
                     slothList1.appendChild(li);
-                })
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                }
             } else if (slothArray.length > 8 && slothArray.length < 17){
                 const slothArray1 = slothArray.slice(0,8);
                 const slothArray2 = slothArray.slice(8);
