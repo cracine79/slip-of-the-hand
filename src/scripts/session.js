@@ -9,7 +9,10 @@ class Session {
 
     async generateSlothsArray() {
         let sloths = this.word.allPossibleSloths();
-        const slothPromises = sloths.map(async (word) => {
+        let longSloths = sloths.filter(function(el) {return el.length > 1 && !el.includes(" ")})
+        debugger;
+
+        const slothPromises = longSloths.map(async (word) => {
             try {
                 const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
                 if (response.ok) {
@@ -52,12 +55,16 @@ class Session {
         brk.innerHTML = ".";
         brk.className="brk"
         slHeader.append(brk)
+        const brk2 = document.createElement('p');
+        brk2.innerHTML = ".";
+        brk2.className="brk2"
       
+        
         
         if (slothArray.length === 0){
             const otherSloths = document.createElement('p');
             otherSloths.id = "otherSloths"
-            slHeader.append(brk)
+            slHeader.append(brk2)
             otherSloths.innerHTML = `${this.word.value.slice(0,1).toUpperCase()+this.word.value.slice(1)} is a SlotH-less pattern!!`
             slHeader.append(otherSloths)
             slHeader.append(brk)
