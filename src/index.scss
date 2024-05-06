@@ -60,7 +60,7 @@ body {
 
 #wrapper {
     width: 100%;
-    height: 870px;
+    height: 850px;
     border: none;
     display: flex;
     justify-content: center;
@@ -156,6 +156,8 @@ ul {
     margin-top: 20px;
 }
 
+
+
 #otherSloths{
     font-family:'chicago'
 }
@@ -180,6 +182,11 @@ ul {
 }
 
 .introTextExample{
+    font-size: 16px;
+    color: red;
+}
+
+#yourWord {
     font-size: 16px;
     color: red;
 }
