@@ -27,8 +27,6 @@ class Session {
         });
     
         const slothArray = await Promise.all(slothPromises);
-    
-        console.log(slothArray.filter(wordDef => wordDef !== null));
         this.printSloths(slothArray.filter(wordDef => wordDef !== null));
     }
 
@@ -98,41 +96,42 @@ class Session {
             } else if (slothArray.length > 8 && slothArray.length < 17){
                 const slothArray1 = slothArray.slice(0,8);
                 const slothArray2 = slothArray.slice(8);
-                slothArray1.forEach((sloth)=>{
+
+                for (const sloth of slothArray1){
                     const li = document.createElement('li');
-                    li.innerHTML = sloth[0].word;
-                    li.id = "slothItem"
+                    const word = sloth[0].word;
                     slothList1.appendChild(li);
-                })
-                slothArray2.forEach((sloth)=>{
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                }
+                for (const sloth of slothArray2){
                     const li = document.createElement('li');
-                    li.innerHTML = sloth[0].word;
-                    li.id = "slothItem"
+                    const word = sloth[0].word;
                     slothList2.appendChild(li);
-                })
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                }
 
              } else {
                 const slothArray1 = slothArray.slice(0,8);
                 const slothArray2 = slothArray.slice(8,16);
                 const slothArray3 = slothArray.slice(16,24)
-                slothArray1.forEach((sloth)=>{
+                for (const sloth of slothArray1){
                     const li = document.createElement('li');
-                    li.innerHTML = sloth[0].word;
-                    li.id = "slothItem"
+                    const word = sloth[0].word;
                     slothList1.appendChild(li);
-                })
-                slothArray2.forEach((sloth)=>{
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                }
+                for (const sloth of slothArray2){
                     const li = document.createElement('li');
-                    li.innerHTML = sloth[0].word;
-                    li.id = "slothItem"
+                    const word = sloth[0].word;
                     slothList2.appendChild(li);
-                 })
-                 slothArray3.forEach((sloth)=>{
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                }
+                for (const sloth of slothArray3){
                     const li = document.createElement('li');
-                    li.innerHTML = sloth[0].word;
-                    li.id = "slothItem"
+                    const word = sloth[0].word;
                     slothList3.appendChild(li);
-                 })
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                }
             }
         }
     }
