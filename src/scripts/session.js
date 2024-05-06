@@ -33,7 +33,7 @@ class Session {
         this.printSloths(slothArray.filter(wordDef => wordDef !== null));
     }
 
-    printSloths(slothArray){
+    async printSloths(slothArray){
         const slothList1 = document.getElementById('sloth-list1');
         slothList1.innerHTML = "";
         const slothList2 = document.getElementById('sloth-list2');
@@ -42,14 +42,20 @@ class Session {
         slothList3.innerHTML = "";
         const intro = document.getElementById('intro-box');
         intro.innerHTML = "";
-        const header = document.getElementById('slHeader');
-        header.innerHTML = "";
+        const slHeader = document.getElementById('slHeader');
+        slHeader.innerHTML = "";
 
-        const slHeader = document.getElementById("slHeader")
+        const resultWindow = new MacWindow();
+
+
         const youEntered = document.createElement('p');
         youEntered.id = "youEntered"
-        youEntered.innerHTML = `You entered the word: ${this.word.value}`
         slHeader.append(youEntered);
+
+        const youEnteredText = `You entered the word: `
+        await resultWindow.typeWords(youEnteredText, youEntered);
+        const yourWord = `${this.word.value}`
+        resultWindow.handsTypeWords(yourWord, youEntered, 500, yourWord);
 
         const brk = document.createElement('p');
         brk.innerHTML = ".";
