@@ -9,6 +9,7 @@ class MacWindow {
         this.innerbox = document.getElementById("innerBox")
         this.slothList = document.getElementById("sloth-list")
         this.typing = new Audio('../sounds/keyboard-typing-5997.mp3')
+        this.type = new Audio('../sounds/onetype.mp3')
     }
 
     async typeWords(sentence, typedOn, wait = 30){
@@ -112,6 +113,7 @@ class MacWindow {
   
                 leftHand.id = "lh_unpressed"
             }
+            this.type.play();
             await this.waitForMs(wait); 
             i++
         }
