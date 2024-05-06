@@ -202,6 +202,10 @@ instructions.addEventListener('click', (e) => {
     listBox.style.display = "none"
     header.style.display = "none"
     introBox.style.display = "block"
+    instructions.style.display = "none"
+    const rules = document.getElementById('rules')
+    rules.style.display = "block"
+
 
 
 })

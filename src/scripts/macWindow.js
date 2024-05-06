@@ -8,6 +8,7 @@ class MacWindow {
         this.form = document.getElementById("getSloth");
         this.innerbox = document.getElementById("innerBox")
         this.slothList = document.getElementById("sloth-list")
+        this.typing = new Audio('../sounds/keyboard-typing-5997.mp3')
     }
 
     async typeWords(sentence, typedOn, wait = 30){
@@ -129,7 +130,10 @@ class MacWindow {
         return new Promise(resolve => setTimeout(resolve, ms)) 
     }
 
+    
+
     async fillIntro(){
+        this.typing.play()
         const head = "Welcome to Slip of the Hand";
         const welcome = document.getElementById("welcome");
         await this.typeWords(head, welcome)
@@ -138,10 +142,14 @@ class MacWindow {
         await this.typeWords(intro1, para1)
         const intro2 = "For example, imagine the hands below are trying to type the word  "
         const para2 = document.getElementById("introText2")
+       
         await this.typeWords(intro2, para2);
         const dry = "DRY";
         const drySpot = document.getElementById("dry");
+        this.typing.pause()
         await this.handsTypeWords(dry, drySpot,700, "dry");
+        this.typing.load()
+        this.typing.play()
         const intro2Cont= " but accidentally started out typing one key position to the left."  
         const para2Cont = document.getElementById("introText2Cont")
         await this.typeWords(intro2Cont, para2Cont);
@@ -150,20 +158,26 @@ class MacWindow {
         const rightHand = document.getElementById("rh_unpressed");
         leftHand.style.paddingLeft = "35px"
         rightHand.style.paddingLeft = "325px"
+      
         await this.waitForMs(500);
         const intro2ContMore = "  This would result in typing the word: "
         await this.typeWords(intro2ContMore, para2Cont);
         const set = "SET";
         const setSpot = document.getElementById("set");
+        this.typing.pause()
         await this.handsTypeWords(set, setSpot,500, "dry");
         await this.waitForMs(1000); 
+        this.typing.play();
         const slip= "SLIP OF THE HAND!!"
         const slipSpot = document.getElementById("slip")
         await this.typeWords(slip, slipSpot);
+        this.typing.pause()
         await this.waitForMs(1000); 
+        this.typing.play();
         const intro3 = "Go ahead, give it a try!  Enter a word of phrase and see what slips of the hand you could have had!"
         const para3 = document.getElementById("introText3");
         await this.typeWords(intro3, para3)
+        this.typing.pause()
 
     }
 
