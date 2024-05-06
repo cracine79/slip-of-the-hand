@@ -153,16 +153,25 @@ body {
 }
 #entry-box {
     height: 20px;
-    width: 200px;
+    width: 140px;
     margin-top: 00px;
  
 }
 
-#submit {
- width: 150px;
+#instructions{
+    display: none;
 }
+
+#submit {
+ width: 120px;
+}
+
 #getSloth {
     height: 30px;
+    width: 370px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
 }
 
 

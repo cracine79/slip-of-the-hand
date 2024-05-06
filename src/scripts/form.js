@@ -4,6 +4,10 @@ function handleWord (event){
     event.preventDefault();
     const word = form.inputbox.value;
     const session = new Session(word)
+    const rules = document.getElementById('rules')
+    rules.style.display = 'none';
+    const home = document.getElementById('instructions');
+    home.style.display = 'inline'
     session.generateSlothsArray();
 }
 
