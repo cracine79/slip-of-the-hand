@@ -116,6 +116,19 @@ body {
     justify-content: space-evenly;
 
 }
+
+#modal-wrapper{
+    display: none;
+    position: absolute;
+    margin-left: -3px;
+    width: 420px;
+    height: 324px;
+    background-color: grey;
+    opacity: 75%;
+    z-index: 1;
+    border-radius: 25px;
+}
+
 #text-box{
     height: 250px;
     width: 380px;
@@ -156,10 +169,13 @@ ul {
     margin-top: 20px;
 }
 
-
+.sloth-list li:hover {
+    cursor: pointer;
+}
 
 #otherSloths{
-    font-family:'chicago'
+    font-family:'chicago';
+    font-size: 14px;
 }
 
 #slothItem{

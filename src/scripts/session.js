@@ -83,12 +83,15 @@ class Session {
             const otherSloths = document.createElement('p');
             otherSloths.id = "otherSloths"
             slHeader.append(otherSloths);
-            const youMighta = `If you had mispositioned one or both hands, there are ${slothArray.length} possible SlotHs you could have typed:`
-            await resultWindow.typeWords(youMighta, otherSloths)
+
+           
+                let youMighta = `If you had mispositioned one or both hands, there are ${slothArray.length} possible SlotHs you could have typed:`
+           
+                await resultWindow.typeWords(youMighta, otherSloths)
 
             if (slothArray.length < 9) {
                 for (const sloth of slothArray) {
-                
+                    
                     const li = document.createElement('li');
                     const word = sloth[0].word;
                     slothList1.appendChild(li);
@@ -142,6 +145,16 @@ class Session {
             }
         }
     }
+
+
+   static modalDef(word){
+    console.log("clicked!")
+   }
+
 }
+const lists = document.getElementById('list-box');
+lists.addEventListener('click', (e) => 
+    Session.modalDef()
+);
 
 export default Session
