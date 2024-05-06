@@ -5,8 +5,9 @@ import mWind from "./macWindow.js"
 class Session {
     constructor(input){
         this.word = new Word(input)
+        this.allSloths = []
     }
-
+    
     async generateSlothsArray() {
         let sloths = this.word.allPossibleSloths();
         let longSloths = sloths.filter(function(el) {return el.length > 1 && !el.includes(" ")})
@@ -27,6 +28,7 @@ class Session {
         });
     
         const slothArray = await Promise.all(slothPromises);
+        this.allSloths = (slothArray.filter(wordDef => wordDef !== null));
         this.printSloths(slothArray.filter(wordDef => wordDef !== null));
     }
 
@@ -147,14 +149,47 @@ class Session {
     }
 
 
-   static modalDef(word){
-    console.log("clicked!")
+   static async getDef(word){
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+    if (response.ok) {
+        return (response.json());
+    } else {
+        console.error(`${word} is not a word`);
+        return null;
+    }
+   }
+
+   static async modalDef(word){
+    const modalWrapper = document.getElementById('modal-wrapper');
+    const modal = document.getElementById('modal');
+    const definition = await Session.getDef(word)
+    
+    modal.innerHTML = "";
+    modal.style.display = "flex"
+    modalWrapper.style.display = "flex"
+
+    let partOfSpeech = definition[0].meanings[0].partOfSpeech;
+    let meaning = definition[0].meanings[0].definitions[0].definition;
+    let theWord = definition[0].word.toUpperCase();
+    let pronounce = definition[0].phonetic;
+
+    modal.append(`${theWord}: `)
+    modal.append(`Phoenetic: ${pronounce}: `)
+    modal.append(`Part of Speech: ${partOfSpeech}: `)
+    modal.append(`Definition: ${meaning}: `)
+
    }
 
 }
 const lists = document.getElementById('list-box');
-lists.addEventListener('click', (e) => 
-    Session.modalDef()
-);
+lists.addEventListener('click', (e) => {
+    console.log(e.target.innerHTML)
+    Session.modalDef(e.target.innerHTML)
+});
+
+let modalWrapper = document.getElementById('modal-wrapper');
+modalWrapper.addEventListener('click', (e) => {
+    modalWrapper.style.display = "none"
+})
 
 export default Session
