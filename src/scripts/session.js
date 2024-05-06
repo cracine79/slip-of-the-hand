@@ -92,6 +92,7 @@ class Session {
                     const word = sloth[0].word;
                     slothList1.appendChild(li);
                     await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                    await resultWindow.waitForMs(1000)
                 }
             } else if (slothArray.length > 8 && slothArray.length < 17){
                 const slothArray1 = slothArray.slice(0,8);
