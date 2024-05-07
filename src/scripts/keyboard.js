@@ -8,8 +8,11 @@ const KEYBOARD  = ["1234567890-=".split(""),
 const handleKeyDown = function(event){
     const keyToppers = document.getElementsByClassName("keyTopper");
     for(let i =0; i<keyToppers.length; i++){
-        debugger;
         keyToppers[i].style.display = 'none'
+    }
+    const slothToppers = document.getElementsByClassName("slothTopper");
+    for(let i =0; i<slothToppers.length; i++){
+        slothToppers[i].style.display = 'none'
     }
     
     "abcdefghijklmnopqrstuvwxyz".split("").forEach((letter) => {

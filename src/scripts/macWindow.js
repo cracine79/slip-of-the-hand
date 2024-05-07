@@ -49,7 +49,7 @@ class MacWindow {
 
     
 
-    async handsTypeWords(sentence, typedOn, wait = 30, orig, color){
+    async handsTypeWords(sentence, typedOn, wait = 30, orig, color, classname){
         const left = "qwertgfdsazxcvb".split("");
         const right = "yuiophjklnm".split("")
         const origLetters = new Word(orig);
@@ -115,10 +115,11 @@ class MacWindow {
   
                 leftHand.id = "lh_unpressed"
             }
+            classname ||= "keyTopper"
             this.type.play();
             let key = document.createElement('div');
             key.id = `${lettersArr[i].toLowerCase()}_topper`
-            key.className = "keyTopper";
+            key.className = classname;
             key.style.backgroundColor = `${color}`
             let keyHand = document.getElementById('hands_keys');
             keyHand.append(key);

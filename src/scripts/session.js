@@ -97,8 +97,13 @@ class Session {
                     const li = document.createElement('li');
                     const word = sloth[0].word;
                     slothList1.appendChild(li);
-                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value, "blue", "slothTopper")
                     await resultWindow.waitForMs(1000)
+                  
+                    const slothToppers = document.getElementsByClassName("slothTopper")
+                    for(let i = 0; i < slothToppers.length; i ++){
+                        slothToppers[i].style.display = "none"
+                    }
                 }
             } else if (slothArray.length > 8 && slothArray.length < 17){
                 const slothArray1 = slothArray.slice(0,8);
@@ -108,15 +113,23 @@ class Session {
                     const li = document.createElement('li');
                     const word = sloth[0].word;
                     slothList1.appendChild(li);
-                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value, "blue", "slothTopper")
                     await resultWindow.waitForMs(1000)
+                    const slothToppers = document.getElementsByClassName("slothTopper")
+                    for(let i = 0; i < slothToppers.length; i ++){
+                        slothToppers[i].style.display = "none"
+                    }
                 }
                 for (const sloth of slothArray2){
                     const li = document.createElement('li');
                     const word = sloth[0].word;
                     slothList2.appendChild(li);
-                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value, "blue", "slothTopper")
                     await resultWindow.waitForMs(1000)
+                    const slothToppers = document.getElementsByClassName("slothTopper")
+                    for(let i = 0; i < slothToppers.length; i ++){
+                        slothToppers[i].style.display = "none"
+                    }
                 }
 
              } else {
@@ -127,22 +140,34 @@ class Session {
                     const li = document.createElement('li');
                     const word = sloth[0].word;
                     slothList1.appendChild(li);
-                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value, "blue", "slothTopper")
                     await resultWindow.waitForMs(1000)
+                    const slothToppers = document.getElementsByClassName("slothTopper")
+                    for(let i = 0; i < slothToppers.length; i ++){
+                        slothToppers[i].style.display = "none"
+                    }
                 }
                 for (const sloth of slothArray2){
                     const li = document.createElement('li');
                     const word = sloth[0].word;
                     slothList2.appendChild(li);
-                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value, "blue", "slothTopper")
                     await resultWindow.waitForMs(1000)
+                    const slothToppers = document.getElementsByClassName("slothTopper")
+                    for(let i = 0; i < slothToppers.length; i ++){
+                        slothToppers[i].style.display = "none"
+                    }
                 }
                 for (const sloth of slothArray3){
                     const li = document.createElement('li');
                     const word = sloth[0].word;
                     slothList3.appendChild(li);
-                    await resultWindow.handsTypeWords(word, li, 500, this.word.value)
+                    await resultWindow.handsTypeWords(word, li, 500, this.word.value, "blue", "slothTopper")
                     await resultWindow.waitForMs(1000)
+                    const slothToppers = document.getElementsByClassName("slothTopper")
+                    for(let i = 0; i < slothToppers.length; i ++){
+                        slothToppers[i].style.display = "none"
+                    }
                 }
             }
         }
