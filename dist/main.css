@@ -152,13 +152,6 @@ body {
   border: solid black 1px;
   margin-top: 20px;
 }
-#text-box #clippy {
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  margin-left: 200px;
-  margin-top: 50px;
-}
 
 #entry-box {
   height: 20px;
@@ -225,6 +218,15 @@ ul {
   margin-top: 15px;
 }
 
+#explanation-box {
+  margin-left: 15px;
+  font-family: "chicago";
+  margin-right: 10px;
+  margin-top: 20px;
+  height: 230px;
+  display: none;
+}
+
 #danceSloth {
   height: 120px;
   width: 120px;
@@ -239,6 +241,16 @@ ul {
 
 .introText {
   font-size: 12px;
+}
+
+#clippy {
+  background-image: url(../images/clippy.gif);
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  margin-left: 230px;
+  margin-top: 10px;
+  background-size: 160px;
 }
 
 .introTextExample {

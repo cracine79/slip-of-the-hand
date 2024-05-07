@@ -6,6 +6,7 @@ import Word from "./scripts/word.js"
 import Session from "./scripts/session.js"
 import {handleWord} from "./scripts/form.js"
 import macWindow from "./scripts/macWindow.js"
+import Explanation from "./scripts/explanation.js"
 
 console.log("entry point working!")
 fn1()

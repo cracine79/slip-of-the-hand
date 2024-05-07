@@ -151,13 +151,7 @@ body {
     background-image: url(../images/window.png);
     border: solid black 1px;
     margin-top: 20px;
-#clippy{
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    margin-left: 200px;
-    margin-top: 50px;
-}
+
     
 }
 #entry-box {
@@ -228,6 +222,15 @@ ul {
     margin-top: 15px;
 }
 
+#explanation-box{
+    margin-left: 15px;
+    font-family: 'chicago';
+    margin-right: 10px;
+    margin-top: 20px;
+    height: 230px;
+    display: none;
+}
+
 #danceSloth{
     height: 120px;
     width: 120px;
@@ -243,16 +246,17 @@ ul {
     font-size: 12px;
 }
 
-// #clippy{
-//     background-image: url(../images/clippy.gif);
-//     width: 100px;
-//     height: 100px;
-//     position: absolute;
-//     background-size: 100px, 100px;
-//     margin-left: 280px;
-//     margin-top: 0px;
-    
-// }
+#clippy{
+    background-image: url(../images/clippy.gif);
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    margin-left: 230px;
+    margin-top: 10px;
+    background-size: 160px;
+}
+
+
 
 .introTextExample{
     font-size: 16px;

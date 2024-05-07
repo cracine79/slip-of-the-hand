@@ -1,6 +1,7 @@
 import Word from "./word.js"
 import MacWindow from "./macWindow.js"
 import mWind from "./macWindow.js"
+import Explanation from "./explanation.js"
 
 class Session {
     constructor(input){
@@ -177,13 +178,13 @@ class Session {
             }
             const clippy = document.getElementById('clippy')
             if (clippy){
-                clippy.style.display = "block"
+                clippy.style.display = "flex"
             } else {
-                const clippy = document.createElement('img')
+                const clippy = document.createElement('div')
                 clippy.id = "clippy"
-            clippy.src="../images/myownclip.gif";
-            const listBox = document.getElementById('list-box');
-            listBox.append(clippy)
+               
+                lists.append(clippy)
+                clippy.style.display = "flex"
             }
             
         }
@@ -241,6 +242,8 @@ instructions.addEventListener('click', (e) => {
     const header = document.getElementById('slHeader')
     const listBox = document.getElementById('list-box')
     const keyboard = document.getElementById('keyboard')
+    const rulesBox = document.getElementById("explanation-box");
+    rulesBox.style.display = 'none';
     listBox.style.display = "none"
     header.style.display = "none"
     introBox.style.display = "block"
@@ -267,8 +270,31 @@ instructions.addEventListener('click', (e) => {
     ttop.style.display = "block";
 
     const clippy = document.getElementById('clippy');
+    if (clippy){
     clippy.style.display = "none"
+    }
+})
 
+const rulesButton = document.getElementById('rules')
+rulesButton.addEventListener('click', (ev) =>{
+    ev.preventDefault();
+    const intro = document.getElementById('intro-box');
+    intro.style.display = 'none'
+    const rules = document.getElementById('rules')
+    rules.style.display = 'none';
+    const instructions = document.getElementById('instructions');
+    instructions.style.display = 'block';
+    
+    const keyToppers = document.getElementsByClassName("keyTopper");
+    for(let i =0; i<keyToppers.length; i++){
+        keyToppers[i].style.display = 'none'
+    }
+    const rulesBox = document.getElementById("explanation-box");
+    rulesBox.style.display = 'flex';
+    const explanation = new Explanation(rulesBox);
+    explanation.renderScreen();
+
+    
 })
 
 export default Session

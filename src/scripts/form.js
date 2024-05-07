@@ -9,6 +9,8 @@ function handleWord (event){
     }
     const intro = document.getElementById('intro-box');
     intro.style.display = 'none'
+    const explanation = document.getElementById('explanation-box');
+    explanation.style.display = 'none';
     const word = form.inputbox.value;
     const session = new Session(word)
     const rules = document.getElementById('rules')
