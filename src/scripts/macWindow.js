@@ -30,6 +30,7 @@ class MacWindow {
         const letters = sentence.split("");
         let i = 0;
         const keyboard = document.getElementById("keyboard");
+        
      
         while (i<letters.length){
            
@@ -48,7 +49,7 @@ class MacWindow {
 
     
 
-    async handsTypeWords(sentence, typedOn, wait = 30, orig){
+    async handsTypeWords(sentence, typedOn, wait = 30, orig, color){
         const left = "qwertgfdsazxcvb".split("");
         const right = "yuiophjklnm".split("")
         const origLetters = new Word(orig);
@@ -57,6 +58,7 @@ class MacWindow {
         const lettersArr = sentence.split("");
         const origPattern = origLetters.toFullPattern();
         const newPattern = letters.toFullPattern();
+        color ||= "red";
 
         let leftShift = undefined;
         let rightShift = undefined;
@@ -114,6 +116,12 @@ class MacWindow {
                 leftHand.id = "lh_unpressed"
             }
             this.type.play();
+            let key = document.createElement('div');
+            key.id = `${lettersArr[i].toLowerCase()}_topper`
+            key.className = "keyTopper";
+            key.style.backgroundColor = `${color}`
+            let keyHand = document.getElementById('hands_keys');
+            keyHand.append(key);
             await this.waitForMs(wait); 
             i++
         }
@@ -167,7 +175,7 @@ class MacWindow {
         const set = "SET";
         const setSpot = document.getElementById("set");
         this.typing.pause()
-        await this.handsTypeWords(set, setSpot,500, "dry");
+        await this.handsTypeWords(set, setSpot,500, "dry", "blue");
         await this.waitForMs(1000); 
         this.typing.play();
         const slip= "SLIP OF THE HAND!!"
