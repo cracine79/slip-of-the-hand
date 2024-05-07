@@ -50,6 +50,7 @@ class MacWindow {
     
 
     async handsTypeWords(sentence, typedOn, wait = 30, orig, color, classname){
+        orig ||= sentence;
         const left = "qwertgfdsazxcvb".split("");
         const right = "yuiophjklnm".split("")
         const origLetters = new Word(orig);

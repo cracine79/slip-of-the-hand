@@ -295,4 +295,90 @@ rulesButton.addEventListener('click', (ev) =>{
     // explanation.renderScreen();
 })
 
+const clearExpPage = () => {
+    const expPage = document.getElementById('explanation-box');
+    expPage.style.display = 'none';
+}
+
+const handPosButton = document.getElementById('handPosButton')
+handPosButton.addEventListener('click', handleSlipExp)
+
+async function handleSlipExp (){
+    clearExpPage();
+    const expWindow = new MacWindow();
+    const handPosBox = document.getElementById('handpos-box');
+    const keyboard = document.getElementById('keyboard')
+    handPosBox.style.display = 'flex';
+    const exp1 = document.createElement('p');
+    handPosBox.append(exp1)
+    const exp1Words = "Each hand is responsible for typing 15 keys in total"
+    expWindow.typing.play();
+    await expWindow.typeWords(exp1Words, exp1);
+    expWindow.typing.pause();   
+    keyboard.className = "left_pressed"
+    await expWindow.waitForMs(1000);
+    keyboard.className = "right_pressed"
+    await expWindow.waitForMs(1000);
+    keyboard.className = "unpressed"
+
+    const exp2 = document.createElement('p');
+    handPosBox.append(exp2)
+    const exp2Words = "Each finger is responsible for typing 2 keys, with the exception of the index finger, which covers 6 keys."
+    expWindow.typeWords(exp2Words, exp2);
+
+    const invis = document.createElement('p')
+    await expWindow.handsTypeWords("qazwsxedcrfvtgb", invis, 150);
+    await expWindow.handsTypeWords("yhnujmik", invis, 150,"yhnujmik", "blue")
+    let key = document.createElement('div');
+    let rightHand = document.getElementById('rh_unpressed');
+    key.id = `comma_topper`;
+    key.className = "keyTopper";
+    key.style.backgroundColor = "blue";
+    let keyHand = document.getElementById('hands_keys');
+    keyHand.append(key);
+    rightHand.id = 'rh_comma_pressed';
+    await expWindow.waitForMs(150);
+    rightHand.id = 'rh_unpressed'
+    await expWindow.handsTypeWords("ol", invis, 150,"ol", "blue")
+    let key2 = document.createElement('div');
+    key2.id = `period_topper`;
+    key2.className = "keyTopper";
+    key2.style.backgroundColor = "blue";
+    keyHand.append(key2);
+    rightHand.id = 'rh_period_pressed';
+    await expWindow.waitForMs(150);
+    rightHand.id = 'rh_unpressed'
+    await expWindow.handsTypeWords("p", invis, 150,"p", "blue")
+    let key3 = document.createElement('div');
+    key3.id = `semicolon-topper`;
+    key3.className = "keyTopper";
+    key3.style.backgroundColor = "blue";
+    keyHand.append(key3);
+    rightHand.id = 'rh_semicolon_pressed';
+    await expWindow.waitForMs(150);
+    rightHand.id = 'rh_unpressed'
+    let key4= document.createElement('div');
+    key4.id = `qmark_topper`;
+    key4.className = "keyTopper";
+    key4.style.backgroundColor = "blue";
+    keyHand.append(key4);
+    rightHand.id = 'rh_slash_pressed';
+    await expWindow.waitForMs(150);
+    rightHand.id = 'rh_unpressed'
+
+    await expWindow.waitForMs(1500);
+
+    
+
+
+
+
+
+
+
+
+}
+
+
+
 export default Session

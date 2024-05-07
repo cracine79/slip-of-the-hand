@@ -228,6 +228,16 @@ ul {
   flex-direction: column;
 }
 
+#handpos-box {
+  margin-left: 0px;
+  font-family: "chicago";
+  margin-top: 20px;
+  margin-left: 10px;
+  height: 230px;
+  display: none;
+  flex-direction: column;
+}
+
 .expHolder {
   display: flex;
   align-items: center;
@@ -244,6 +254,15 @@ ul {
 
 .expButton:hover {
   background-color: gray;
+  cursor: pointer;
+}
+
+.backToRules {
+  position: absolute;
+  height: 20px;
+  width: 150px;
+  margin-top: 185px;
+  margin-left: 200px;
 }
 
 #danceSloth {
@@ -1032,4 +1051,12 @@ ul {
 
 .space_pressed {
   background-image: url(../images/keyboard/space_pressed.png);
+}
+
+.left_pressed {
+  background-image: url(../images/keyboard/left_pressed.png);
+}
+
+.right_pressed {
+  background-image: url(../images/keyboard/right_pressed.png);
 }
