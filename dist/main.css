@@ -236,6 +236,11 @@ ul {
   height: 230px;
   display: none;
   flex-direction: column;
+  font-size: 14px;
+}
+
+#exp_header {
+  font-size: 20px;
 }
 
 .expHolder {
@@ -291,6 +296,14 @@ ul {
 
 #slothGenIntro {
   width: 220px;
+}
+
+#breakaway {
+  color: white;
+}
+
+#breakaway2 {
+  color: white;
 }
 
 #clippy {
@@ -1059,4 +1072,68 @@ ul {
 
 .right_pressed {
   background-image: url(../images/keyboard/right_pressed.png);
+}
+
+.left_slip_1 {
+  background-image: url(../images/keyboard/left_slip_1.png);
+}
+
+.left_slip_2 {
+  background-image: url(../images/keyboard/left_slip_2.png);
+}
+
+.left_slip_3 {
+  background-image: url(../images/keyboard/left_slip_3.png);
+}
+
+.left_slip_4 {
+  background-image: url(../images/keyboard/left_slip_4.png);
+}
+
+.left_slip_5 {
+  background-image: url(../images/keyboard/left_slip_5.png);
+}
+
+.left_slip_6 {
+  background-image: url(../images/keyboard/left_slip_6.png);
+}
+
+.left_slip_7 {
+  background-image: url(../images/keyboard/left_slip_7.png);
+}
+
+.left_slip_8 {
+  background-image: url(../images/keyboard/left_slip_8.png);
+}
+
+.right_slip_1 {
+  background-image: url(../images/keyboard/right_slip_1.png);
+}
+
+.right_slip_2 {
+  background-image: url(../images/keyboard/right_slip_2.png);
+}
+
+.right_slip_3 {
+  background-image: url(../images/keyboard/right_slip_3.png);
+}
+
+.right_slip_4 {
+  background-image: url(../images/keyboard/right_slip_4.png);
+}
+
+.right_slip_5 {
+  background-image: url(../images/keyboard/right_slip_5.png);
+}
+
+.right_slip_6 {
+  background-image: url(../images/keyboard/right_slip_6.png);
+}
+
+.right_slip_7 {
+  background-image: url(../images/keyboard/right_slip_7.png);
+}
+
+.right_slip_8 {
+  background-image: url(../images/keyboard/right_slip_8.png);
 }

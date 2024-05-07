@@ -320,7 +320,10 @@ async function handleSlipExp (){
     keyboard.className = "right_pressed"
     await expWindow.waitForMs(1000);
     keyboard.className = "unpressed"
-
+    let lineBr = document.createElement('p')
+    lineBr.id = "breakaway"
+    lineBr.innerHTML = '.'
+    handPosBox.append(lineBr);
     const exp2 = document.createElement('p');
     handPosBox.append(exp2)
     const exp2Words = "Each finger is responsible for typing 2 keys, with the exception of the index finger, which covers 6 keys."
@@ -367,16 +370,87 @@ async function handleSlipExp (){
     rightHand.id = 'rh_unpressed'
 
     await expWindow.waitForMs(1500);
+    const keyToppers = document.getElementsByClassName("keyTopper");
+    for(let i =0; i<keyToppers.length; i++){
+        keyToppers[i].style.display = 'none'
+    }
 
-    
+    let lineBr2 = document.createElement('p')
+    lineBr2.id = "breakaway2"
+    lineBr2.innerHTML = '.'
+    handPosBox.append(lineBr2);
 
 
+    const exp3 = document.createElement('p');
+    handPosBox.append(exp3)
+    const exp3Words = "A hand can slip a maximium of one key vertically and/or one key horizontally, making 8 possible new hand positions for each hand, plus the original position makes 9."
+    expWindow.typeWords(exp3Words, exp3);
 
-
-
-
-
-
+    const leftHand = document.getElementById("lh_unpressed")
+    keyboard.className = "left_pressed";
+    await expWindow.waitForMs(400);
+    keyboard.className = "left_slip_1";
+    leftHand.style.marginTop = "-51px";
+    await expWindow.waitForMs(400);
+    keyboard.className = "left_slip_2";
+    leftHand.style.marginLeft = "-51px";
+    await expWindow.waitForMs(400);
+    keyboard.className = "left_slip_3";
+    leftHand.style.marginTop = "0px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "left_slip_4";
+    leftHand.style.marginTop = "52px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "left_slip_5";
+    leftHand.style.marginLeft = "0px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "left_slip_6";
+    leftHand.style.marginLeft = "52px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "left_slip_7";
+    leftHand.style.marginTop = "0px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "left_slip_8";
+    leftHand.style.marginTop = "-51px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "unpressed";
+    leftHand.style.marginTop = "0px"
+    leftHand.style.marginLeft = "0px"
+    keyboard.className = "left_pressed"
+    await expWindow.waitForMs(400);
+    keyboard.className = "unpressed";
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_pressed";
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_slip_1";
+    rightHand.style.marginTop = "-51px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_slip_2";
+    rightHand.style.marginLeft = "51px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_slip_3";
+    rightHand.style.marginTop = "0px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_slip_4";
+    rightHand.style.marginTop = "52px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_slip_5";
+    rightHand.style.marginLeft = "0px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_slip_6";
+    rightHand.style.marginLeft = "-51px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_slip_7";
+    rightHand.style.marginTop = "0px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_slip_8";
+    rightHand.style.marginTop = "-51px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "right_pressed";
+    rightHand.style.marginTop = "0px"
+    rightHand.style.marginLeft = "0px"
+    await expWindow.waitForMs(400);
+    keyboard.className = "unpressed";
 }
 
 
