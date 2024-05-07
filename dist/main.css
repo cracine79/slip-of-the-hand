@@ -84,6 +84,10 @@ body {
   align-items: center;
 }
 
+#celeb {
+  margin-left: 10px;
+}
+
 #keyboard {
   background-repeat: no-repeat;
   width: 800px;
@@ -147,6 +151,13 @@ body {
   background-image: url(../images/window.png);
   border: solid black 1px;
   margin-top: 20px;
+}
+#text-box #clippy {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  margin-left: 200px;
+  margin-top: 50px;
 }
 
 #entry-box {
@@ -212,6 +223,13 @@ ul {
   font-family: "chicago";
   margin-right: 10px;
   margin-top: 15px;
+}
+
+#danceSloth {
+  height: 120px;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .intro {
@@ -514,6 +532,16 @@ ul {
 
 #comma_topper {
   margin-left: 481px;
+  margin-top: 166px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  opacity: 50%;
+  position: absolute;
+}
+
+#m_topper {
+  margin-left: 431px;
   margin-top: 166px;
   width: 50px;
   height: 50px;

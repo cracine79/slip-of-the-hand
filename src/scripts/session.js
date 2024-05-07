@@ -76,9 +76,14 @@ class Session {
             await resultWindow.typeWords(noSloth, otherSloths)
             slHeader.append(brk)
             const celeb = document.createElement('p')
+            celeb.id = 'celeb'
             const yayNoSloth = "NO SLOTH! NO SLOTH!"
             slHeader.append(celeb)
             await resultWindow.typeWords(yayNoSloth, celeb)
+            const danceSloth = document.createElement('img')
+            danceSloth.id = "danceSloth"
+            danceSloth.src="../images/200w.gif";
+            slHeader.append(danceSloth)
 
         } else {
 
@@ -170,6 +175,17 @@ class Session {
                     }
                 }
             }
+            const clippy = document.getElementById('clippy')
+            if (clippy){
+                clippy.style.display = "block"
+            } else {
+                const clippy = document.createElement('img')
+                clippy.id = "clippy"
+            clippy.src="../images/myownclip.gif";
+            const listBox = document.getElementById('list-box');
+            listBox.append(clippy)
+            }
+            
         }
     }
 
@@ -224,14 +240,34 @@ instructions.addEventListener('click', (e) => {
     e.preventDefault()
     const header = document.getElementById('slHeader')
     const listBox = document.getElementById('list-box')
+    const keyboard = document.getElementById('keyboard')
     listBox.style.display = "none"
     header.style.display = "none"
     introBox.style.display = "block"
     instructions.style.display = "none"
     const rules = document.getElementById('rules')
     rules.style.display = "block"
+    keyboard.className = "unpressed";
+    const keyToppers = document.getElementsByClassName("keyTopper");
+    for(let i =0; i<keyToppers.length; i++){
+        keyToppers[i].style.display = 'none'
+    }
+    const dtop = document.getElementById('d_topper')
+    const rtop = document.getElementById('r_topper')
+    const ytop = document.getElementById('y_topper')
+    dtop.style.display = "block";
+    rtop.style.display = "block";
+    ytop.style.display = "block";
 
+    const stop = document.getElementById('s_topper')
+    const etop = document.getElementById('e_topper')
+    const ttop = document.getElementById('t_topper')
+    stop.style.display = "block";
+    etop.style.display = "block";
+    ttop.style.display = "block";
 
+    const clippy = document.getElementById('clippy');
+    clippy.style.display = "none"
 
 })
 

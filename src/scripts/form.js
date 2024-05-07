@@ -2,6 +2,11 @@ import Session from "./session.js"
 
 function handleWord (event){
     event.preventDefault();
+    
+    const clippy = document.getElementById('clippy');
+    if (clippy) {
+    clippy.style.display = "none"
+    }
     const intro = document.getElementById('intro-box');
     intro.style.display = 'none'
     const word = form.inputbox.value;
@@ -15,6 +20,10 @@ function handleWord (event){
     const listBox = document.getElementById('list-box')
     listBox.style.display = "flex"
     header.style.display = "inline"
+    const keyToppers = document.getElementsByClassName("keyTopper");
+    for(let i =0; i<keyToppers.length; i++){
+        keyToppers[i].style.display = 'none'
+    }
 }
 
 
