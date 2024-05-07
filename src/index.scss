@@ -232,6 +232,20 @@ ul {
     flex-direction: column;
 }
 
+.expHolder{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.expButton{
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 10px;
+    background-color: white;
+
+}
 #danceSloth{
     height: 120px;
     width: 120px;
@@ -245,6 +259,18 @@ ul {
 
 .introText{
     font-size: 12px;
+}
+
+#handPosIntro{
+    width: 220px;
+}
+
+#slothCatIntro{
+    width: 220px;
+}
+
+#slothGenIntro{
+    width: 220px;
 }
 
 #clippy{
