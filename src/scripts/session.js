@@ -291,10 +291,8 @@ rulesButton.addEventListener('click', (ev) =>{
     }
     const rulesBox = document.getElementById("explanation-box");
     rulesBox.style.display = 'flex';
-    const explanation = new Explanation(rulesBox);
-    explanation.renderScreen();
-
-    
+    // const explanation = new Explanation(rulesBox);
+    // explanation.renderScreen();
 })
 
 export default Session
