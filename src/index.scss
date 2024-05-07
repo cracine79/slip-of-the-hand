@@ -197,7 +197,7 @@ ul {
 #youEntered {
     font-size:20px;
     font-family: 'chicago';
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .sloth-list li:hover {
@@ -231,6 +231,11 @@ ul {
 .introTextExample{
     font-size: 16px;
     color: red;
+}
+
+.introTextExample2{
+    font-size: 16px;
+    color: blue;
 }
 
 #yourWord {
@@ -517,7 +522,7 @@ ul {
     position: absolute;
 }
 
-#n_Topper {
+#n_topper {
     margin-left: 380px;
     margin-top: 166px;
     width: 50px;
@@ -537,7 +542,7 @@ ul {
     position: absolute;
 }
 
-#v-topper {
+#v_topper {
     margin-left: 276px;
     margin-top: 166px;
     width: 50px;

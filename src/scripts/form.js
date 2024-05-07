@@ -2,6 +2,8 @@ import Session from "./session.js"
 
 function handleWord (event){
     event.preventDefault();
+    const intro = document.getElementById('intro-box');
+    intro.style.display = 'none'
     const word = form.inputbox.value;
     const session = new Session(word)
     const rules = document.getElementById('rules')
