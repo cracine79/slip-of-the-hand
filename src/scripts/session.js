@@ -245,6 +245,7 @@ const asSpot = document.getElementById('as');
 const upSpot = document.getElementById('up');
 const yoSpot = document.getElementById('yo');
 const weSpot = document.getElementById('we');
+const slothCatBox = document.getElementById('slothcat-box')
 
 let modalWrapper = document.getElementById('modal-wrapper');
 modalWrapper.addEventListener('click', (e) => {
@@ -259,6 +260,7 @@ instructions.addEventListener('click', (e) => {
 
     previousRules.style.display = "none"
     nextRules.style.display = "block";
+    slothCatBox.style.display = "none";
     
     const header = document.getElementById('slHeader')
     const listBox = document.getElementById('list-box')
@@ -532,8 +534,26 @@ backRules.addEventListener('click', (e) =>{
     asSpot.innerHTML = "";
     upSpot.innerHTML = "";
 
-    
 })
+
+
+const slothCatText = document.getElementById('slothcat-text')
+const backRules2 = document.getElementById('backRules2');
+backRules2.addEventListener('click', (e) =>{
+    slothCatBox.style.display = "none";
+    const explanationBox = document.getElementById('explanation-box');
+    explanationBox.style.display = 'block';
+    backRules2.style.display = 'none';
+  
+    const slothToppers = document.getElementsByClassName("keyTopper")
+    for(let i = 0; i < slothToppers.length; i ++){
+        slothToppers[i].style.display = "none"
+    }
+  
+
+})
+
+
 
 
 const nextRules = document.getElementById('next');
@@ -642,6 +662,19 @@ previousRules.addEventListener('click', (e)=>{
     previousRules.style.display = "none";
     nextRules.style.display = "block";
 
+})
+
+
+const slothCatButton = document.getElementById('slothCatButton');
+slothCatButton.addEventListener('click', (e) => {
+    clearExpPage();
+    for (let i = 0; i<slothCatText.children.length; i++){
+        slothCatText.children[i].innerHTML = "";
+    }
+
+    const slothCatBox = document.getElementById('slothcat-box');
+
+    slothCatBox.style.display = "block"
 })
 
 

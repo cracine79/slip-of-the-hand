@@ -14,6 +14,8 @@ function handleWord (event){
     handPosText.innerHTML = "";
     const handPosText2 = document.getElementById('handpos-text2');
     const hpKids = handPosText2.children;
+    const slothCatBox = document.getElementById('slothcat-box');
+    slothCatBox.style.display = 'none';
 
     const previous = document.getElementById("previous");
     previous.style.display = 'none';

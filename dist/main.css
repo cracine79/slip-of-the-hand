@@ -74,6 +74,26 @@ body {
   padding-top: 25px;
 }
 
+#github-logo {
+  height: 45px;
+  width: 45px;
+  background-image: url(../images/ghlogo_border.png);
+  position: absolute;
+  margin-top: 430px;
+  margin-left: 420px;
+  background-size: 45px;
+}
+
+#linked-logo {
+  height: 47px;
+  width: 47px;
+  background-image: url(../images/link_border.png);
+  position: absolute;
+  margin-top: 428px;
+  margin-left: 465px;
+  background-size: 47px;
+}
+
 #innerbox {
   width: 1000px;
   height: 100%;
@@ -161,6 +181,14 @@ body {
 
 #instructions {
   display: none;
+  background-color: white;
+  border-radius: 7px;
+  width: 100px;
+}
+
+#instructions:hover {
+  background-color: gray;
+  cursor: pointer;
 }
 
 #submit {
@@ -234,7 +262,7 @@ ul {
   margin-left: 10px;
   font-family: "chicago";
   margin-right: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 #explanation-box {
@@ -269,25 +297,44 @@ ul {
   font-size: 14px;
 }
 
+#slothcat-box {
+  margin-left: 0px;
+  font-family: "chicago";
+  margin-top: 20px;
+  margin-left: 10px;
+  height: 230px;
+  display: none;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+#slothcat-text {
+  height: 170px;
+}
+
 #handpos-text2 {
   display: flex;
 }
 
-#exp_header {
+h2 {
   font-size: 20px;
 }
 
 .expHolder {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.introText2 {
+  font-size: 12px;
 }
 
 .expButton {
   width: 120px;
-  height: 50px;
+  height: 45px;
   border-radius: 15px;
-  font-size: 12px;
+  font-size: 11px;
   background-color: white;
 }
 
@@ -302,6 +349,16 @@ ul {
   width: 150px;
   margin-top: 185px;
   margin-left: 20px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+#backRules2 {
+  position: absolute;
+  height: 20px;
+  width: 150px;
+  margin-top: 0px;
+  margin-left: 210px;
   background-color: white;
   border-radius: 6px;
 }
@@ -384,7 +441,7 @@ ul {
   height: 125px;
   width: 140px;
   margin-left: 230px;
-  margin-top: 30px;
+  margin-top: 25px;
   background-size: 140px;
 }
 

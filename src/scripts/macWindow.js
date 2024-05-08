@@ -59,7 +59,7 @@ class MacWindow {
         const lettersArr = sentence.split("");
         const origPattern = origLetters.toFullPattern();
         const newPattern = letters.toFullPattern();
-        debugger;
+ 
         color ||= "red";
 
         let leftShift = undefined;
