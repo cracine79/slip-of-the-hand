@@ -262,16 +262,18 @@ const startupMonitor = document.getElementById('startup-monitor')
 const form = document.getElementById('getSloth')
 const parchment = document.getElementById('text-box')
 const header = document.getElementById('welcomeToSloth')
-
+const startupSound = new Audio('../sounds/Startup.wav')
 async function startupSequence (){
     await mWind.waitForMs(500)
     startupImage.style.display = "block";
+    startupSound.play()
     await mWind.waitForMs(2000)
     startupImage.style.display = "none";
-    await mWind.waitForMs(2000)
+    await mWind.waitForMs(1000)
     welcomeIn.style.display = 'block'
-    await mWind.waitForMs(4000)
+    await mWind.waitForMs(2500)
     welcomeIn.style.display = 'none'
+    
     await mWind.waitForMs(1000)
     startupMonitor.style.display = 'none'
     form.style.display ='flex';
