@@ -4,7 +4,7 @@ var muted = false;
 
 class MacWindow {
     
-    
+   
 
     constructor(){
         this.view = document.getElementById("inner-monitor");
@@ -59,6 +59,7 @@ class MacWindow {
     }
 
     async typeWords(sentence, typedOn, wait = 30){
+       
         const letters = sentence.split("");
         let i = 0;
         const keyboard = document.getElementById("keyboard");
@@ -199,7 +200,7 @@ class MacWindow {
         this.playClicking()
 
         const head = "Welcome to Slip of the Hand";
-        const welcome = document.getElementById("welcome");
+        const welcome = document.getElementById("welcomeToSloth");
         await this.typeWords(head, welcome)
         const intro1 = "A Slip of the Hand [SlotH] occurs when you type a word or phrase with one or both hands in the incorrect position, and another word or phrase is typed as a result."
         const para1 = document.getElementById("introText1");
@@ -252,8 +253,37 @@ class MacWindow {
 
 
 export default MacWindow;
+
+
 let mWind = new MacWindow();
-mWind.fillIntro()
+const startupImage = document.getElementById('startup')
+const welcomeIn = document.getElementById('welcome')
+const startupMonitor = document.getElementById('startup-monitor')
+const form = document.getElementById('getSloth')
+const parchment = document.getElementById('text-box')
+const header = document.getElementById('welcomeToSloth')
+
+async function startupSequence (){
+    await mWind.waitForMs(500)
+    startupImage.style.display = "block";
+    await mWind.waitForMs(2000)
+    startupImage.style.display = "none";
+    await mWind.waitForMs(2000)
+    welcomeIn.style.display = 'block'
+    await mWind.waitForMs(4000)
+    welcomeIn.style.display = 'none'
+    await mWind.waitForMs(1000)
+    startupMonitor.style.display = 'none'
+    form.style.display = 'block';
+    parchment.style.display = 'block';
+    header.style.display = 'block'
+    mWind.fillIntro()
+}
+
+startupSequence();
+
+
+
 
 export { mWind };
 

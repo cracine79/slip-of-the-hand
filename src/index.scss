@@ -190,9 +190,37 @@ body {
     background-image: url(../images/window.png);
     border: solid black 1px;
     margin-top: 20px;
+    display: none;
+}
 
+#startup{
+    height: 40px;
+    width: 40px;
+    background-image: url(../images/happymac.webp);
+    background-size: 40px;
+    display: none;
     
 }
+
+#welcome{
+    height: 100px;
+    width: 300px;
+    background-image: url(../images/Welcome_to_slip.png);
+    background-size: 300px 100px;
+    display: none;
+}
+
+#startup-monitor{
+    height: 100%;
+    width: 98%;
+
+    background-image: url(../images/fullscreen.png);
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #entry-box {
     height: 20px;
     width: 125px;
@@ -242,6 +270,7 @@ body {
     display: flex; 
     justify-content: space-between;
     align-items: center;
+    display: none;
 }
 
 
