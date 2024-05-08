@@ -128,9 +128,14 @@ body {
     position: absolute;
     height: 100px;
     width: 115px;
-    border: white 1px solid;
+
     margin-top: 450px;
-    margin-left: 558px;
+    margin-left: 556px;
+ 
+}
+
+#mouse:hover{
+    cursor: pointer
 }
 
 #inner-monitor {

@@ -23,9 +23,14 @@ class MacWindow {
     
     }
 
+    
     playClicking(){
+        
+    
         if (muted === false){
             this.typing.play()
+       
+
         }
 
     }
@@ -33,17 +38,23 @@ class MacWindow {
     playClick(){
         if (muted === false){
             this.type.play()
+
         }
     }
    
 
     handleClick(){
+        const mouse = document.getElementById('mouse');
+
         if (muted === false){
            muted = true;
+           mouse.style.backgroundImage = "url(../images/Unmute.png)"
+      
            console.log(muted)
         }else {
             muted = false;
             console.log(muted)
+            mouse.style.backgroundImage = 'none';
         }
     }
 
