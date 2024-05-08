@@ -84,6 +84,10 @@ body {
   background-size: 45px;
 }
 
+#github-logo:hover {
+  background-image: url(../images/github_hover.png);
+}
+
 #linked-logo {
   height: 47px;
   width: 47px;
@@ -92,6 +96,10 @@ body {
   margin-top: 428px;
   margin-left: 465px;
   background-size: 47px;
+}
+
+#linked-logo:hover {
+  background-image: url(../images/link_border_hover.png);
 }
 
 #innerbox {
