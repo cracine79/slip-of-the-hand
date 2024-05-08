@@ -328,6 +328,19 @@ ul {
   font-size: 14px;
 }
 
+#slothgen-box {
+  margin-left: 0px;
+  font-family: "chicago";
+  margin-top: 50px;
+  margin-left: 20px;
+  height: 210px;
+  width: 340px;
+  display: none;
+  font-size: 14px;
+  background-image: url(../images/instruction3window.png);
+  background-size: 340px 210px;
+}
+
 #slothcat-text {
   height: 170px;
   margin-top: 5px;
@@ -381,6 +394,16 @@ h2 {
   width: 150px;
   margin-top: 12px;
   margin-left: 210px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+#backRules3 {
+  position: absolute;
+  height: 20px;
+  width: 150px;
+  margin-top: 205px;
+  margin-left: 200px;
   background-color: white;
   border-radius: 6px;
 }
@@ -458,13 +481,13 @@ h2 {
 }
 
 #clippy {
-  background-image: url(../images/myownclip.gif);
+  background-image: url(../images/ClippyGiffy.gif);
   position: absolute;
-  height: 125px;
-  width: 140px;
+  height: 119px;
+  width: 125px;
   margin-left: 230px;
   margin-top: 25px;
-  background-size: 140px;
+  background-size: 125px;
 }
 
 .introTextExample {

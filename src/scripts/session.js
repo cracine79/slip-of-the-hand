@@ -50,7 +50,7 @@ class Session {
         intro.style.display = 'none'
         const slHeader = document.getElementById('slHeader');
         slHeader.innerHTML = "";
-        debugger;
+      
         const resultWindow = new MacWindow();
 
 
@@ -270,6 +270,8 @@ instructions.addEventListener('click', (e) => {
     previousRules.style.display = "none"
     nextRules.style.display = "block";
     slothCatBox.style.display = "none";
+    const slothGenBox = document.getElementById('slothgen-box');
+    slothGenBox.style.display = 'none';
     
     const header = document.getElementById('slHeader')
     const listBox = document.getElementById('list-box')
@@ -558,8 +560,15 @@ backRules2.addEventListener('click', (e) =>{
     for(let i = 0; i < slothToppers.length; i ++){
         slothToppers[i].style.display = "none"
     }
-  
 
+})
+
+const backRules3 = document.getElementById('backRules3');
+backRules3.addEventListener('click', (e) => {
+    backRules3.style.display = 'none';
+    slothGenBox.style.display = 'none'
+    const explanationBox = document.getElementById('explanation-box');
+    explanationBox.style.display = 'block';
 })
 
 
@@ -672,7 +681,14 @@ previousRules.addEventListener('click', (e)=>{
     nextRules.style.display = "block";
 
 })
-
+    const slothGenBox = document.getElementById("slothgen-box");
+const slothGenButton = document.getElementById('slothGenButton');
+slothGenButton.addEventListener('click', (e)=>{
+    clearExpPage();
+    slothGenBox.style.display = "flex";
+    slothGenBox.style.marginTop = '10px';
+    backRules3.style.display = 'block';
+})
 
 const slothCatButton = document.getElementById('slothCatButton');
 slothCatButton.addEventListener('click', handleCatButton)

@@ -7,7 +7,8 @@ function handleWord (event){
     if (clippy) {
     clippy.style.display = "none"
     }
-
+    const slothGenBox = document.getElementById('slothgen-box');
+    slothGenBox.style.display = 'none'
     const handposBox = document.getElementById('handpos-box')
     handposBox.style.display = 'none';
     const handPosText = document.getElementById('handpos-text');
