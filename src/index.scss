@@ -156,7 +156,7 @@ body {
 }
 #entry-box {
     height: 20px;
-    width: 140px;
+    width: 125px;
     margin-top: 00px;
  
 }
@@ -167,6 +167,25 @@ body {
 
 #submit {
  width: 120px;
+ background-color: white;
+ border-radius: 7px;
+ font-size: 12px;
+}
+
+#submit:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+#rules{
+    background-color: white;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+#rules:hover{
+    background-color: gray;
+    cursor: pointer;
 }
 
 #getSloth {

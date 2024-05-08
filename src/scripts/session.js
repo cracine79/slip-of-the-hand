@@ -256,6 +256,9 @@ let introBox = document.getElementById('intro-box');
 
 instructions.addEventListener('click', (e) => {
     e.preventDefault()
+
+    previousRules.style.display = "none"
+    nextRules.style.display = "block";
     
     const header = document.getElementById('slHeader')
     const listBox = document.getElementById('list-box')
@@ -272,6 +275,7 @@ instructions.addEventListener('click', (e) => {
     exp7Place.innerHTML = "";
     exp8Place.innerHTML = "";
     exp9Place.innerHTML = "";
+
     handPosBox.style.display = "none"
     rulesBox.style.display = 'none';
     listBox.style.display = "none"

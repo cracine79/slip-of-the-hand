@@ -59,6 +59,7 @@ class MacWindow {
         const lettersArr = sentence.split("");
         const origPattern = origLetters.toFullPattern();
         const newPattern = letters.toFullPattern();
+        debugger;
         color ||= "red";
 
         let leftShift = undefined;
@@ -67,14 +68,13 @@ class MacWindow {
  
         for(let i=0; i<origPattern.length; i++){
             
-            if (left.includes(origLettersArr[i]) && leftShift === undefined){
+            if (left.includes(origLettersArr[i].toLowerCase()) && leftShift === undefined){
                 let leftVertShift = (newPattern[i][0]-origPattern[i][0])
                 let leftHorizShift = (newPattern[i][1]-origPattern[i][1])
                 leftShift = [leftVertShift, leftHorizShift]
             } else if (rightShift === undefined){
                 let rightVertShift = (newPattern[i][0]-origPattern[i][0])
                 let rightHorizShift = (newPattern[i][1]-origPattern[i][1])
-                debugger;
                 rightShift = [rightVertShift, rightHorizShift]
             }
         }
