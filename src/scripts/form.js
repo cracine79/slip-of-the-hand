@@ -7,6 +7,20 @@ function handleWord (event){
     if (clippy) {
     clippy.style.display = "none"
     }
+
+    const handposBox = document.getElementById('handpos-box')
+    handposBox.style.display = 'none';
+    const handPosText = document.getElementById('handpos-text');
+    handPosText.innerHTML = "";
+    const handPosText2 = document.getElementById('handpos-text2');
+    const hpKids = handPosText2.children;
+
+    const previous = document.getElementById("previous");
+    previous.style.display = 'none';
+
+    for(let i = 0; i < hpKids.length; i++){
+        hpKids[i].innerHTML = "";
+    }
     const intro = document.getElementById('intro-box');
     intro.style.display = 'none'
     const explanation = document.getElementById('explanation-box');

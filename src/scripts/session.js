@@ -52,12 +52,18 @@ class Session {
         youEntered.id = "youEntered"
         slHeader.append(youEntered);
 
-        const youEnteredText = `You entered the word: `
+        
+         const youEnteredText = `You entered the word: `
+        
+  
         await resultWindow.typeWords(youEnteredText, youEntered);
+        
+        
+        const expWindow = new MacWindow();
         const yourWord = `${this.word.value}`
         
         await resultWindow.handsTypeWords(yourWord, youEntered, 500, yourWord)
-      
+        
         const brk = document.createElement('p');
         brk.innerHTML = ".";
         brk.className="brk"
@@ -229,6 +235,17 @@ lists.addEventListener('click', (e) => {
     Session.modalDef(e.target.innerHTML)
 });
 
+const exp9Place = document.getElementById('slipExp6')
+const exp4Place = document.getElementById('slipExp1')
+const exp5Place = document.getElementById('slipExp2')
+const exp6Place = document.getElementById('slipExp3')
+const exp7Place = document.getElementById('slipExp4')
+const exp8Place = document.getElementById('slipExp5')
+const asSpot = document.getElementById('as');
+const upSpot = document.getElementById('up');
+const yoSpot = document.getElementById('yo');
+const weSpot = document.getElementById('we');
+
 let modalWrapper = document.getElementById('modal-wrapper');
 modalWrapper.addEventListener('click', (e) => {
     modalWrapper.style.display = "none"
@@ -239,10 +256,23 @@ let introBox = document.getElementById('intro-box');
 
 instructions.addEventListener('click', (e) => {
     e.preventDefault()
+    
     const header = document.getElementById('slHeader')
     const listBox = document.getElementById('list-box')
     const keyboard = document.getElementById('keyboard')
     const rulesBox = document.getElementById("explanation-box");
+    const handPosBox = document.getElementById('handpos-box');
+    yoSpot.innerHTML = "";
+    weSpot.innerHTML = "";
+    asSpot.innerHTML = "";
+    upSpot.innerHTML = "";
+    exp4Place.innerHTML = "";
+    exp5Place.innerHTML = "";
+    exp6Place.innerHTML = "";
+    exp7Place.innerHTML = "";
+    exp8Place.innerHTML = "";
+    exp9Place.innerHTML = "";
+    handPosBox.style.display = "none"
     rulesBox.style.display = 'none';
     listBox.style.display = "none"
     header.style.display = "none"
@@ -255,6 +285,7 @@ instructions.addEventListener('click', (e) => {
     for(let i =0; i<keyToppers.length; i++){
         keyToppers[i].style.display = 'none'
     }
+    
     const dtop = document.getElementById('d_topper')
     const rtop = document.getElementById('r_topper')
     const ytop = document.getElementById('y_topper')
@@ -303,14 +334,27 @@ const clearExpPage = () => {
 const handPosButton = document.getElementById('handPosButton')
 handPosButton.addEventListener('click', handleSlipExp)
 
+const handPosText = document.getElementById('handpos-text')
+const handPosText2 = document.getElementById('handpos-text2')
+const expWindow = new MacWindow();
+
 async function handleSlipExp (){
     clearExpPage();
-    const expWindow = new MacWindow();
+    const nextRules = document.getElementById('next');
+    nextRules.style.display = "block";
+    
     const handPosBox = document.getElementById('handpos-box');
+
+    handPosText.style.display = "block";
+    const handKids = handPosText.children;
+    for(let i=0; i<handKids.length; i++){
+        handKids[i].style.display = "block";
+    }
+    handPosText.innerHTML = "";
     const keyboard = document.getElementById('keyboard')
     handPosBox.style.display = 'flex';
     const exp1 = document.createElement('p');
-    handPosBox.append(exp1)
+    handPosText.append(exp1)
     const exp1Words = "Each hand is responsible for typing 15 keys in total"
     expWindow.typing.play();
     await expWindow.typeWords(exp1Words, exp1);
@@ -323,10 +367,10 @@ async function handleSlipExp (){
     let lineBr = document.createElement('p')
     lineBr.id = "breakaway"
     lineBr.innerHTML = '.'
-    handPosBox.append(lineBr);
+    handPosText.append(lineBr);
     const exp2 = document.createElement('p');
-    handPosBox.append(exp2)
-    const exp2Words = "Each finger is responsible for typing 2 keys, with the exception of the index finger, which covers 6 keys."
+    handPosText.append(exp2)
+    const exp2Words = "Each finger is responsible for typing 3 keys, with the exception of the index finger, which covers 6 keys."
     expWindow.typeWords(exp2Words, exp2);
 
     const invis = document.createElement('p')
@@ -378,13 +422,15 @@ async function handleSlipExp (){
     let lineBr2 = document.createElement('p')
     lineBr2.id = "breakaway2"
     lineBr2.innerHTML = '.'
-    handPosBox.append(lineBr2);
+    handPosText.append(lineBr2);
 
 
     const exp3 = document.createElement('p');
-    handPosBox.append(exp3)
+    handPosText.append(exp3)
+    expWindow.typing.play();
     const exp3Words = "A hand can slip a maximium of one key vertically and/or one key horizontally, making 8 possible new hand positions for each hand, plus the original position makes 9."
     expWindow.typeWords(exp3Words, exp3);
+    
 
     const leftHand = document.getElementById("lh_unpressed")
     keyboard.className = "left_pressed";
@@ -430,7 +476,9 @@ async function handleSlipExp (){
     await expWindow.waitForMs(400);
     keyboard.className = "right_slip_3";
     rightHand.style.marginTop = "0px"
+    expWindow.typing.pause();
     await expWindow.waitForMs(400);
+    
     keyboard.className = "right_slip_4";
     rightHand.style.marginTop = "52px"
     await expWindow.waitForMs(400);
@@ -452,6 +500,146 @@ async function handleSlipExp (){
     await expWindow.waitForMs(400);
     keyboard.className = "unpressed";
 }
+
+const handPosBox = document.getElementById('handpos-box')
+const handPosBox2 = document.getElementById('handpos-box2')
+const previousRules = document.getElementById('previous')
+
+const backRules = document.getElementById('backRules');
+backRules.addEventListener('click', (e) =>{
+    handPosBox.style.display = "none";
+    const explanationBox = document.getElementById('explanation-box');
+    explanationBox.style.display = 'block';
+    handPosText2.style.display = 'none';
+    previousRules.style.display = 'none';
+    const slothToppers = document.getElementsByClassName("keyTopper")
+    for(let i = 0; i < slothToppers.length; i ++){
+        slothToppers[i].style.display = "none"
+    }
+
+    exp4Place.innerHTML = "";
+    exp5Place.innerHTML = "";
+    exp6Place.innerHTML = "";
+    exp7Place.innerHTML = "";
+    exp8Place.innerHTML = "";
+    exp9Place.innerHTML = "";
+    yoSpot.innerHTML = "";
+    weSpot.innerHTML = "";
+    asSpot.innerHTML = "";
+    upSpot.innerHTML = "";
+
+    
+})
+
+
+const nextRules = document.getElementById('next');
+
+nextRules.addEventListener('click', expNextPage);
+
+
+async function expNextPage(){
+    handPosText.style.display = "none";
+    handPosText2.style.display = 'inline';
+    nextRules.style.display = "none"
+    previousRules.style.display = "block"
+
+    const exp4 = document.createElement('span');
+    
+    exp4Place.append(exp4)
+    const exp4Words = "Once a hand has slipped, it must follow the same finger pattern of the word, prior to the slip -- see how the word:  "
+    expWindow.typing.play();
+    await expWindow.typeWords(exp4Words, exp4);
+    expWindow.typing.pause();
+
+    const yo = "YO";
+
+    await expWindow.handsTypeWords(yo, yoSpot, 500);
+
+
+    const exp5 = document.createElement('span');
+    
+    exp5Place.append(exp5)
+    const exp5Words = " follows the same right hand pattern as "
+    expWindow.typing.play();
+    await expWindow.typeWords(exp5Words, exp5);
+    expWindow.typing.pause();
+
+    const up = "UP";
+
+    await expWindow.handsTypeWords(up, upSpot, 500, yo, "blue");
+
+
+    const exp6 = document.createElement('span');
+    
+    exp6Place.append(exp6)
+    const exp6Words = " simply shifted one key position to the right. "
+    expWindow.typing.play();
+    await expWindow.typeWords(exp6Words, exp6);
+    expWindow.typing.pause();
+
+    await expWindow.waitForMs(1000)
+
+
+    const exp7 = document.createElement('span');
+    
+    exp7Place.append(exp7);
+    const exp7Words = " Simililarly we see the same left hand typing pattern shared between";
+    expWindow.typing.play();
+    await expWindow.typeWords(exp7Words, exp7);
+    expWindow.typing.pause();
+
+    const as = "AS";
+
+    await expWindow.handsTypeWords(as, asSpot, 500);
+
+    const exp8 = document.createElement('span');
+   
+    exp8Place.append(exp8);
+    const exp8Words = " and ";
+    expWindow.typing.play();
+    await expWindow.typeWords(exp8Words, exp8);
+    expWindow.typing.pause();
+
+    const we = "WE";
+
+    await expWindow.handsTypeWords(we, weSpot, 500, as, "blue");
+
+    await expWindow.waitForMs(1000)
+
+
+    const exp9= document.createElement('span');
+    
+    exp9Place.append(exp9);
+    const exp9Words = "Assuming each hand can slip indepdently, there are in total 80 possible hand slips from the correct typing position.";
+    expWindow.typing.play();
+    await expWindow.typeWords(exp9Words, exp9);
+    expWindow.typing.pause();
+}
+
+
+previousRules.addEventListener('click', (e)=>{
+    exp4Place.innerHTML = "";
+    exp5Place.innerHTML = "";
+    exp6Place.innerHTML = "";
+    exp7Place.innerHTML = "";
+    exp8Place.innerHTML = "";
+    exp9Place.innerHTML = "";
+    yoSpot.innerHTML = "";
+    weSpot.innerHTML = "";
+    asSpot.innerHTML = "";
+    upSpot.innerHTML = "";
+    const slothToppers = document.getElementsByClassName("keyTopper")
+    for(let i = 0; i < slothToppers.length; i ++){
+        slothToppers[i].style.display = "none"
+    }
+
+  
+    handPosText.style.display = "block";
+    previousRules.style.display = "none";
+    nextRules.style.display = "block";
+
+})
+
 
 
 

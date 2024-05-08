@@ -62,7 +62,7 @@ class MacWindow {
         color ||= "red";
 
         let leftShift = undefined;
-        let rightShift = undefined;
+        let rightShift  = undefined;
 
  
         for(let i=0; i<origPattern.length; i++){
@@ -74,6 +74,7 @@ class MacWindow {
             } else if (rightShift === undefined){
                 let rightVertShift = (newPattern[i][0]-origPattern[i][0])
                 let rightHorizShift = (newPattern[i][1]-origPattern[i][1])
+                debugger;
                 rightShift = [rightVertShift, rightHorizShift]
             }
         }
