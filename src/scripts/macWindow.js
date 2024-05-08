@@ -274,7 +274,7 @@ async function startupSequence (){
     welcomeIn.style.display = 'none'
     await mWind.waitForMs(1000)
     startupMonitor.style.display = 'none'
-    form.style.display = 'block';
+    form.style.display ='flex';
     parchment.style.display = 'block';
     header.style.display = 'block'
     mWind.fillIntro()
