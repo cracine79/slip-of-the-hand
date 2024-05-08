@@ -3,10 +3,16 @@ import MacWindow from "./macWindow.js"
 import mWind from "./macWindow.js"
 import Explanation from "./explanation.js"
 
+
+
+
+
+
 class Session {
     constructor(input){
         this.word = new Word(input)
         this.allSloths = []
+
     }
     
     async generateSlothsArray() {
@@ -44,7 +50,7 @@ class Session {
         intro.style.display = 'none'
         const slHeader = document.getElementById('slHeader');
         slHeader.innerHTML = "";
-
+        debugger;
         const resultWindow = new MacWindow();
 
 
@@ -55,9 +61,9 @@ class Session {
         
          const youEnteredText = `You entered the word: `
         
-  
+        resultWindow.playClicking()
         await resultWindow.typeWords(youEnteredText, youEntered);
-        
+        resultWindow.typing.pause()
         
         const expWindow = new MacWindow();
         const yourWord = `${this.word.value}`
@@ -80,6 +86,7 @@ class Session {
             otherSloths.id = "otherSloths"
             slHeader.append(otherSloths)
             const noSloth = `${this.word.value.slice(0,1).toUpperCase()+this.word.value.slice(1)} is a SlotH-less pattern!!`
+            resultWindow.playClicking()
             await resultWindow.typeWords(noSloth, otherSloths)
             slHeader.append(brk)
             const celeb = document.createElement('p')
@@ -87,6 +94,7 @@ class Session {
             const yayNoSloth = "NO SLOTH! NO SLOTH!"
             slHeader.append(celeb)
             await resultWindow.typeWords(yayNoSloth, celeb)
+            resultWindow.typing.pause()
             const danceSloth = document.createElement('img')
             danceSloth.id = "danceSloth"
             danceSloth.src="../images/200w.gif";
@@ -100,8 +108,9 @@ class Session {
 
            
                 let youMighta = `If you had mispositioned one or both hands, there are ${slothArray.length} possible SlotHs you could have typed:`
-           
+                resultWindow.playClicking()
                 await resultWindow.typeWords(youMighta, otherSloths)
+                resultWindow.typing.pause()
 
             if (slothArray.length < 9) {
                 for (const sloth of slothArray) {
@@ -362,7 +371,7 @@ async function handleSlipExp (){
     const exp1 = document.createElement('p');
     handPosText.append(exp1)
     const exp1Words = "Each hand is responsible for typing 15 keys in total"
-    expWindow.typing.play();
+    expWindow.playClicking();
     await expWindow.typeWords(exp1Words, exp1);
     expWindow.typing.pause();   
     keyboard.className = "left_pressed"
@@ -433,7 +442,7 @@ async function handleSlipExp (){
 
     const exp3 = document.createElement('p');
     handPosText.append(exp3)
-    expWindow.typing.play();
+    expWindow.playClicking();;
     const exp3Words = "A hand can slip a maximium of one key vertically and/or one key horizontally, making 8 possible new hand positions for each hand, plus the original position makes 9."
     expWindow.typeWords(exp3Words, exp3);
     
@@ -571,7 +580,7 @@ async function expNextPage(){
     
     exp4Place.append(exp4)
     const exp4Words = "Once a hand has slipped, it must follow the same finger pattern of the word, prior to the slip -- see how the word:  "
-    expWindow.typing.play();
+    expWindow.playClicking();;
     await expWindow.typeWords(exp4Words, exp4);
     expWindow.typing.pause();
 
@@ -584,7 +593,7 @@ async function expNextPage(){
     
     exp5Place.append(exp5)
     const exp5Words = " follows the same right hand pattern as "
-    expWindow.typing.play();
+    expWindow.playClicking();;
     await expWindow.typeWords(exp5Words, exp5);
     expWindow.typing.pause();
 
@@ -597,7 +606,7 @@ async function expNextPage(){
     
     exp6Place.append(exp6)
     const exp6Words = " simply shifted one key position to the right. "
-    expWindow.typing.play();
+    expWindow.playClicking();
     await expWindow.typeWords(exp6Words, exp6);
     expWindow.typing.pause();
 
@@ -608,7 +617,7 @@ async function expNextPage(){
     
     exp7Place.append(exp7);
     const exp7Words = " Simililarly we see the same left hand typing pattern shared between";
-    expWindow.typing.play();
+    expWindow.playClicking();
     await expWindow.typeWords(exp7Words, exp7);
     expWindow.typing.pause();
 
@@ -620,7 +629,7 @@ async function expNextPage(){
    
     exp8Place.append(exp8);
     const exp8Words = " and ";
-    expWindow.typing.play();
+    expWindow.playClicking();
     await expWindow.typeWords(exp8Words, exp8);
     expWindow.typing.pause();
 
@@ -635,7 +644,7 @@ async function expNextPage(){
     
     exp9Place.append(exp9);
     const exp9Words = "Assuming each hand can slip indepdently, there are in total 80 possible hand slips from the correct typing position.";
-    expWindow.typing.play();
+    expWindow.playClicking();
     await expWindow.typeWords(exp9Words, exp9);
     expWindow.typing.pause();
 }

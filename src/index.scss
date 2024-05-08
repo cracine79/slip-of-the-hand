@@ -111,8 +111,6 @@ body {
     border: none;
     display: flex;
     position: absolute;    
-
-
 }
 
 #monitor {
@@ -124,6 +122,15 @@ body {
     background-image :url(../images/Computer.png);
     border: none;
 
+}
+
+#mouse {
+    position: absolute;
+    height: 100px;
+    width: 115px;
+    border: white 1px solid;
+    margin-top: 450px;
+    margin-left: 558px;
 }
 
 #inner-monitor {
@@ -411,7 +418,7 @@ h2{
     height: 120px;
     width: 120px;
     margin-left: 20px;
-    margin-top: 10px
+    margin-top: 0px
 }
 .intro{ 
     font-family:'chicago';

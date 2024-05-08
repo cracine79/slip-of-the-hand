@@ -10,7 +10,7 @@ import Explanation from "./scripts/explanation.js"
 
 console.log("entry point working!")
 fn1()
-
+let muted = false;
 
 
 // const handleKeyDown = function(event){

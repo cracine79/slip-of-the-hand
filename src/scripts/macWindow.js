@@ -1,15 +1,50 @@
 import Word from "./word.js"
 
+var muted = false;
 
 class MacWindow {
+    
+    
 
     constructor(){
         this.view = document.getElementById("inner-monitor");
         this.form = document.getElementById("getSloth");
         this.innerbox = document.getElementById("innerBox")
         this.slothList = document.getElementById("sloth-list")
-        this.typing = new Audio('../sounds/keyboard-typing-5997.mp3')
-        this.type = new Audio('../sounds/onetype.mp3')
+  
+            this.typing = new Audio('../sounds/keyboard-typing-5997.mp3')
+            this.type = new Audio('../sounds/onetype.mp3')
+        
+        const mute = document.getElementById('mouse');
+        let that = this;
+     
+        mute.addEventListener('click', this.handleClick);
+       
+    
+    }
+
+    playClicking(){
+        if (muted === false){
+            this.typing.play()
+        }
+
+    }
+
+    playClick(){
+        if (muted === false){
+            this.type.play()
+        }
+    }
+   
+
+    handleClick(){
+        if (muted === false){
+           muted = true;
+           console.log(muted)
+        }else {
+            muted = false;
+            console.log(muted)
+        }
     }
 
     async typeWords(sentence, typedOn, wait = 30){
@@ -118,7 +153,9 @@ class MacWindow {
                 leftHand.id = "lh_unpressed"
             }
             classname ||= "keyTopper"
-            this.type.play();
+         
+            this.playClick()
+          
             let key = document.createElement('div');
             key.id = `${lettersArr[i].toLowerCase()}_topper`
             key.className = classname;
@@ -146,7 +183,10 @@ class MacWindow {
     
 
     async fillIntro(){
-        this.typing.play()
+    
+      
+        this.playClicking()
+
         const head = "Welcome to Slip of the Hand";
         const welcome = document.getElementById("welcome");
         await this.typeWords(head, welcome)
@@ -161,8 +201,8 @@ class MacWindow {
         const drySpot = document.getElementById("dry");
         this.typing.pause()
         await this.handsTypeWords(dry, drySpot,700, "dry");
-        this.typing.load()
-        this.typing.play()
+      
+        this.playClicking()
         const intro2Cont= " but accidentally started out typing one key position to the left."  
         const para2Cont = document.getElementById("introText2Cont")
         await this.typeWords(intro2Cont, para2Cont);
@@ -180,13 +220,13 @@ class MacWindow {
         this.typing.pause()
         await this.handsTypeWords(set, setSpot,500, "dry", "blue");
         await this.waitForMs(1000); 
-        this.typing.play();
+        this.playClicking()
         const slip= "SLIP OF THE HAND!!"
         const slipSpot = document.getElementById("slip")
         await this.typeWords(slip, slipSpot);
         this.typing.pause()
         await this.waitForMs(1000); 
-        this.typing.play();
+        this.playClicking()
         const intro3 = "Go ahead, give it a try!  Enter a word of phrase and see what slips of the hand you could have had!"
         const para3 = document.getElementById("introText3");
         await this.typeWords(intro3, para3)
