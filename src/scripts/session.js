@@ -682,9 +682,10 @@ async function handleCatButton (){
     for (let i = 0; i<slothCatText.children.length; i++){
         slothCatText.children[i].innerHTML = "";
     }
+    backRules2.style.display = 'block';
     const slothCatBox = document.getElementById('slothcat-box');
     slothCatBox.style.display = "block"
-    slothCatBox.marginTop = "5px";
+    slothCatBox.style.marginTop = "10px";
 
     const class1 = document.createElement('span');
     const class1Place = document.getElementById('slothCat1')

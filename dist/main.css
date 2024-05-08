@@ -312,7 +312,7 @@ ul {
 #slothcat-box {
   margin-left: 0px;
   font-family: "chicago";
-  margin-top: 5px;
+  margin-top: 10px;
   margin-left: 10px;
   height: 230px;
   display: none;
@@ -371,7 +371,7 @@ h2 {
   position: absolute;
   height: 20px;
   width: 150px;
-  margin-top: 15px;
+  margin-top: 12px;
   margin-left: 210px;
   background-color: white;
   border-radius: 6px;
