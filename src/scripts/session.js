@@ -675,16 +675,147 @@ previousRules.addEventListener('click', (e)=>{
 
 
 const slothCatButton = document.getElementById('slothCatButton');
-slothCatButton.addEventListener('click', (e) => {
+slothCatButton.addEventListener('click', handleCatButton)
+
+async function handleCatButton (){
     clearExpPage();
     for (let i = 0; i<slothCatText.children.length; i++){
         slothCatText.children[i].innerHTML = "";
     }
-
     const slothCatBox = document.getElementById('slothcat-box');
-
     slothCatBox.style.display = "block"
-})
+    slothCatBox.marginTop = "5px";
+
+    const class1 = document.createElement('span');
+    const class1Place = document.getElementById('slothCat1')
+    class1Place.append(class1)
+    const class1Words = "TRUE SlotHs: Created when left and right hand slip in the same direction.  A good example is "
+    expWindow.playClicking();
+    await expWindow.typeWords(class1Words, class1);
+    expWindow.typing.pause();
+
+    const gunSpot = document.getElementById('gun');
+    gunSpot.style.color = 'red';
+    await expWindow.handsTypeWords("GUN", gunSpot, 500);
+
+
+
+    const class2 = document.createElement('span');
+    const class2Place = document.getElementById('slothCat2')
+    class2Place.append(class2)
+    const class2Words = " and  "
+    expWindow.playClicking();
+    await expWindow.typeWords(class2Words, class2);
+    expWindow.typing.pause();
+
+    const himSpot = document.getElementById('him');
+    himSpot.style.color = 'blue';
+    await expWindow.handsTypeWords("HIM", himSpot, 500, "gun", "blue");
+
+    await expWindow.waitForMs(1000)
+
+
+    const class3 = document.createElement('span');
+    const class3Place = document.getElementById('slothCat3')
+    class3Place.append(class3)
+    const class3Words = "  Notice how the whole word pattern is shifted one key to the right."
+    expWindow.playClicking();
+    await expWindow.typeWords(class3Words, class3);
+    expWindow.typing.pause();
+
+    await expWindow.waitForMs(2000)
+    const slothToppers = document.getElementsByClassName("keyTopper")
+        for(let i = 0; i < slothToppers.length; i ++){
+            slothToppers[i].style.display = "none"
+        }
+
+
+
+    const class4 = document.createElement('span');
+    const class4Place = document.getElementById('slothCat4')
+    class4Place.append(class4)
+    const class4Words = "HAlf SlotHs: Created when one hand slips and the other hand is in the correct typing position.  For example: "
+    expWindow.playClicking();
+    await expWindow.typeWords(class4Words, class4);
+    expWindow.typing.pause();
+
+
+    const tineSpot = document.getElementById('tine');
+    tineSpot.style.color = 'red';
+    await expWindow.handsTypeWords("TINE", tineSpot, 500);
+
+    const class5 = document.createElement('span');
+    const class5Place = document.getElementById('slothCat5')
+    class5Place.append(class5)
+    const class5Words = " and  "
+    expWindow.playClicking();
+    await expWindow.typeWords(class5Words, class5);
+    expWindow.typing.pause();
+
+    const tubeSpot = document.getElementById('tube');
+    tubeSpot.style.color = 'blue';
+    await expWindow.handsTypeWords("TUBE", tubeSpot, 500, "TINE", "blue");
+
+    await expWindow.waitForMs(1000)
+
+    const class6 = document.createElement('span');
+    const class6Place = document.getElementById('slothCat6')
+    class6Place.append(class6)
+    const class6Words = " Notice how the left hand is unshifted, but the right hand has slipped one key to the left!  "
+    expWindow.playClicking();
+    await expWindow.typeWords(class6Words, class6);
+    expWindow.typing.pause();
+
+    await expWindow.waitForMs(2000)
+
+    for(let i = 0; i < slothToppers.length; i ++){
+        slothToppers[i].style.display = "none"
+    }
+
+    const class7 = document.createElement('span');
+    const class7Place = document.getElementById('slothCat7')
+    class7Place.append(class7)
+    const class7Words = "CrAzY SlotHs: Created when each hand slips in a different direction.  For example: "
+    expWindow.playClicking();
+    await expWindow.typeWords(class7Words, class7);
+    expWindow.typing.pause();
+
+    const firmSpot = document.getElementById('firm');
+    firmSpot.style.color = 'red';
+    await expWindow.handsTypeWords("FINS", firmSpot, 500);
+
+
+    const class8 = document.createElement('span');
+    const class8Place = document.getElementById('slothCat8')
+    class8Place.append(class8)
+    const class8Words = " and  "
+    expWindow.playClicking();
+    await expWindow.typeWords(class8Words, class8);
+    expWindow.typing.pause();
+
+
+    const domeSpot = document.getElementById('dome');
+    domeSpot.style.color = 'blue';
+    await expWindow.handsTypeWords("TOME", domeSpot, 500, "FINS", "blue");
+
+    await expWindow.waitForMs(1000)
+
+    const class9 = document.createElement('span');
+    const class9Place = document.getElementById('slothCat9')
+    class9Place.append(class9)
+    const class9Words = " Notice how the right hand shifts right one key, but the left hand shifts up one key as well!"
+    expWindow.playClicking();
+    await expWindow.typeWords(class9Words, class9);
+    expWindow.typing.pause();
+
+  
+
+
+
+
+
+
+}
 
 
 
