@@ -12,8 +12,8 @@ class MacWindow {
         this.innerbox = document.getElementById("innerBox")
         this.slothList = document.getElementById("sloth-list")
   
-            this.typing = new Audio('../sounds/keyboard-typing-5997.mp3')
-            this.type = new Audio('../sounds/onetype.mp3')
+            this.typing = new Audio('./sounds/keyboard-typing-5997.mp3')
+            this.type = new Audio('./sounds/onetype.mp3')
         
         const mute = document.getElementById('mouse');
         let that = this;
@@ -48,7 +48,7 @@ class MacWindow {
 
         if (muted === false){
            muted = true;
-           mouse.style.backgroundImage = "url(../images/Unmute.png)"
+           mouse.style.backgroundImage = "url(./images/Unmute.png)"
       
            console.log(muted)
         }else {
@@ -262,7 +262,7 @@ const startupMonitor = document.getElementById('startup-monitor')
 const form = document.getElementById('getSloth')
 const parchment = document.getElementById('text-box')
 const header = document.getElementById('welcomeToSloth')
-const startupSound = new Audio('../sounds/Startup.wav')
+const startupSound = new Audio('./sounds/Startup.wav')
 async function startupSequence (){
     await mWind.waitForMs(500)
     startupImage.style.display = "block";

@@ -97,7 +97,7 @@ class Session {
             resultWindow.typing.pause()
             const danceSloth = document.createElement('img')
             danceSloth.id = "danceSloth"
-            danceSloth.src="../images/200w.gif";
+            danceSloth.src="./images/200w.gif";
             slHeader.append(danceSloth)
 
         } else {
