@@ -106,8 +106,9 @@ class Session {
             otherSloths.id = "otherSloths"
             slHeader.append(otherSloths);
 
-           
+                
                 let youMighta = `If you had mispositioned one or both hands, there are ${slothArray.length} possible SlotHs you could have typed:`
+                
                 resultWindow.playClicking()
                 await resultWindow.typeWords(youMighta, otherSloths)
                 resultWindow.typing.pause()
@@ -686,7 +687,7 @@ const slothGenButton = document.getElementById('slothGenButton');
 slothGenButton.addEventListener('click', (e)=>{
     clearExpPage();
     slothGenBox.style.display = "flex";
-    slothGenBox.style.marginTop = '10px';
+    slothGenBox.style.marginTop = '15px';
     backRules3.style.display = 'block';
 })
 
@@ -701,7 +702,7 @@ async function handleCatButton (){
     backRules2.style.display = 'block';
     const slothCatBox = document.getElementById('slothcat-box');
     slothCatBox.style.display = "block"
-    slothCatBox.style.marginTop = "10px";
+    slothCatBox.style.marginTop = "15px";
 
     const class1 = document.createElement('span');
     const class1Place = document.getElementById('slothCat1')
