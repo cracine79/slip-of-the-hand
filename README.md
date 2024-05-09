@@ -281,6 +281,8 @@ Currently the program does have the ability assume that a shift would result in 
 
 There may also be a possibility for a game, where the computer gives the user a typed word, and asks the user to find the SlotH associated with the word by shifting one or both hands and retyping. 
 
+A final version would also either disable button functionality while hands/explanations are auto-typing, or would allow user to click buttons, automatically cutting off animations and sound-effects.
+
 
 
 
