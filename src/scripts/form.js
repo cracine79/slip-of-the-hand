@@ -2,6 +2,9 @@ import Session from "./session.js"
 
 function handleWord (event){
     event.preventDefault();
+
+
+    
     
     const clippy = document.getElementById('clippy');
     if (clippy) {
@@ -43,6 +46,7 @@ function handleWord (event){
     for(let i =0; i<keyToppers.length; i++){
         keyToppers[i].style.display = 'none'
     }
+    document.getElementById('entry-box').value = "";
 }
 
 
