@@ -129,8 +129,14 @@ body {
     opacity: 100%;
     border: none;
     display: flex;
-    position: absolute; 
-    background-image: url(./images/keyboard/Keyboard.png/);
+    position: absolute;
+
+    background-image: url(../images/keyboard/Keyboard.png);
+ 
+
+
+ 
+    
 }
 
 #monitor {
@@ -139,7 +145,7 @@ body {
     height: 720px;
     background-size: 670px,  650px;
     opacity: 100%;
-    background-image :url(../images/Computer.png);
+    background-image: url(../images/Computer.png);
     border: none;
 
 }
@@ -378,12 +384,12 @@ ul {
     font-family: 'chicago';
     margin-top: 50px;
     margin-left: 20px;
-    height: 210px;
+    height: 220px;
     width: 340px;
     display: none;
     font-size: 14px;
     background-image: url(../images/instruction3window.png);
-    background-size: 340px 210px;
+    background-size: 340px 220px;
 }
 
 
