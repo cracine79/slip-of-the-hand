@@ -68,13 +68,13 @@ body {
 }
 
 #github-logo{
-    height: 45px;
-    width: 45px;
+    height: 46px;
+    width: 46px;
     background-image: url(../images/ghlogo_border.png);
     position: absolute;
-    margin-top: 430px;
+    margin-top: 431px;
     margin-left: 420px;
-    background-size: 45px;
+    background-size: 46px;
 }
 
 #github-logo:hover{
@@ -85,7 +85,7 @@ body {
     width: 47px;
     background-image: url(../images/link_border.png);
     position: absolute;
-    margin-top: 428px;
+    margin-top: 430px;
     margin-left: 465px;
     background-size: 47px;
 }
@@ -119,6 +119,18 @@ body {
     border: none;
     display: flex;
     position: absolute;    
+}
+
+#underboard{
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 275px;
+    background-size: 800px, 308px;
+    opacity: 100%;
+    border: none;
+    display: flex;
+    position: absolute; 
+    background-image: url(./images/keyboard/Keyboard.png/);
 }
 
 #monitor {
