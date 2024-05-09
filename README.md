@@ -248,7 +248,7 @@ async handsTypeWords(sentence, typedOn, wait = 30, orig, color, classname){
 * Webpack to bundle and transpile the source JavaScipt code.
 * npm to manage project dependencies
 
-## Creatiive Content Acknowledgements
+## Creative Content Acknowledgements
 
 ### This project uses the following creative content:
 
@@ -257,6 +257,7 @@ async handsTypeWords(sentence, typedOn, wait = 30, orig, color, classname){
 * No Fear sticker available at: https://www.hiclipart.com/free-transparent-background-png-clipart-hbqyw
 * Keyboard clicking sound available at: https://pixabay.com/sound-effects/keyboard-typing-5997/
 * Keyboard click sound available at:  https://pixabay.com/sound-effects/keyboard-spacebar-hit-101812/
+* Dancing Sloth Gif available at: https://giphy.com/gifs/CoopPrix-B6pr2bdckiZwpGvFjA
 
 All other images are produced by the developer using Adobe Photoshop and Adobe Illustrator
 
@@ -278,6 +279,8 @@ All other images are produced by the developer using Adobe Photoshop and Adobe I
 Currently the app only works for single words.  It would be an interesting exercise to expand functionality so that the user could enter a phrase and receive SlotH phrases back.  
 
 Currently the program does have the ability assume that a shift would result in a non-output key being striked, like [shift] or [CAPS LOCK].  While it accurately returns these words, in the future it would be nice if the hands typed the shortened words with the accurate pattern as well. Currently the image gets glitchy when a shortened SlotH is returned,  
+
+Another interesting exercise would be to expand functionality to allow the user to set the maximum slip distance.  A greater slip distance would suggest more potential SlotHs for each word. This would almost certainly need to incorporate numbers into returns as well. 
 
 There may also be a possibility for a game, where the computer gives the user a typed word, and asks the user to find the SlotH associated with the word by shifting one or both hands and retyping. 
 

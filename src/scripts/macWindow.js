@@ -112,7 +112,6 @@ class MacWindow {
         let leftShift = undefined;
         let rightShift  = undefined;
 
- 
         for(let i=0; i<origPattern.length; i++){
             
             if (left.includes(origLettersArr[i].toLowerCase()) && leftShift === undefined){
@@ -129,7 +128,6 @@ class MacWindow {
         leftShift ||= [0,0]
         rightShift ||= [0,0]
 
-      
         let i = 0;
         const keyboard = document.getElementById("keyboard");
         const leftHand = document.getElementsByClassName("leftHand")[0];
@@ -154,16 +152,14 @@ class MacWindow {
 
             
             if (left.includes(origLettersArr[i].toLowerCase())){
-                
                 leftHand.id = `lh_${origLettersArr[i].toLowerCase()}_pressed`
- 
-             
                 rightHand.id = "rh_unpressed"
             } else if (right.includes(origLettersArr[i].toLowerCase())){
                 rightHand.id = `rh_${origLettersArr[i].toLowerCase()}_pressed`
   
                 leftHand.id = "lh_unpressed"
             }
+
             classname ||= "keyTopper"
          
             this.playClick()

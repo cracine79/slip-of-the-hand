@@ -1,18 +1,11 @@
 import Word from "./word.js"
 import MacWindow from "./macWindow.js"
 import mWind from "./macWindow.js"
-import Explanation from "./explanation.js"
-
-
-
-
-
 
 class Session {
     constructor(input){
         this.word = new Word(input)
         this.allSloths = []
-
     }
     
     async generateSlothsArray() {
@@ -53,14 +46,11 @@ class Session {
       
         const resultWindow = new MacWindow();
 
-
         const youEntered = document.createElement('p');
         youEntered.id = "youEntered"
         slHeader.append(youEntered);
-
         
-         const youEnteredText = `You entered the word: `
-        
+        const youEnteredText = `You entered the word: `
         resultWindow.playClicking()
         await resultWindow.typeWords(youEnteredText, youEntered);
         resultWindow.typing.pause()
@@ -77,8 +67,6 @@ class Session {
         const brk2 = document.createElement('p');
         brk2.innerHTML = ".";
         brk2.className="brk2"
-      
-        
         
         if (slothArray.length === 0){
             slHeader.append(brk2)
@@ -107,11 +95,11 @@ class Session {
             slHeader.append(otherSloths);
 
                 
-                let youMighta = `If you had mispositioned one or both hands, there are ${slothArray.length} possible SlotHs you could have typed:`
+            let youMighta = `If you had mispositioned one or both hands, there are ${slothArray.length} possible SlotHs you could have typed:`
                 
-                resultWindow.playClicking()
-                await resultWindow.typeWords(youMighta, otherSloths)
-                resultWindow.typing.pause()
+            resultWindow.playClicking()
+            await resultWindow.typeWords(youMighta, otherSloths)
+            resultWindow.typing.pause()
 
             if (slothArray.length < 9) {
                 for (const sloth of slothArray) {
@@ -626,7 +614,7 @@ async function expNextPage(){
     const exp7 = document.createElement('span');
     
     exp7Place.append(exp7);
-    const exp7Words = " Simililarly we see the same left hand typing pattern shared between";
+    const exp7Words = " Similarly we see the same left hand typing pattern shared between";
     expWindow.playClicking();
     await expWindow.typeWords(exp7Words, exp7);
     expWindow.typing.pause();
@@ -702,7 +690,7 @@ async function handleCatButton (){
     backRules2.style.display = 'block';
     const slothCatBox = document.getElementById('slothcat-box');
     slothCatBox.style.display = "block"
-    slothCatBox.style.marginTop = "15px";
+    slothCatBox.style.marginTop = "13px";
 
     const class1 = document.createElement('span');
     const class1Place = document.getElementById('slothCat1')

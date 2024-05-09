@@ -46,7 +46,6 @@ class Word {
 
     toRightPattern(){
         const rightPattern = [];
-
         for(let i = 0; i<this.positionArr.length; i++){
             if (this.positionArr[i][1]>5){
                 rightPattern[i] = this.positionArr[i]
@@ -54,7 +53,6 @@ class Word {
                 rightPattern[i] = undefined;
             }
         }
-   
         return rightPattern;
     }
 
@@ -68,15 +66,12 @@ class Word {
                 leftPattern[i] = undefined;
             }
         }
-      
         return leftPattern;
     }
-
 
     allRightPatterns = () => {
         const rightPattern = this.toRightPattern();
         const allTheRightPatterns = [];
-
         this.DIRS.forEach((dir) => {
             let subArr = [];
             for(let i = 0; i< rightPattern.length; i++){
@@ -94,10 +89,8 @@ class Word {
     allLeftPatterns = () => {
         const leftPattern = this.toLeftPattern();
         const allTheLeftPatterns = [];
-        
         this.DIRS.forEach((dir) => {
             let subArr = [];
-            
             for(let i = 0; i< leftPattern.length; i++){
                 if (leftPattern[i] === undefined){
                     subArr[i] = undefined;
@@ -114,7 +107,6 @@ class Word {
         const alp = this.allLeftPatterns();
         const arp = this.allRightPatterns();
         const allPatternsBothHands = [];
-
         for(let i = 0; i<alp.length; i++){
             for(let j = 0; j<alp.length; j++){
                 let innerArray = [];
@@ -128,16 +120,13 @@ class Word {
                 allPatternsBothHands.push(innerArray);
             }
         }
-  
         return allPatternsBothHands;
     }
   
     static patternToWord(pattern){
         const arr = [];
         const alphabet="abcdefghijklmnopqrstuvwxyz 1234567890-=`,./;'[]".split("");
-
         let caps = false; 
-
         pattern.forEach((pos)=>{
             const char = KEYBOARD[pos[0]][pos[1]];
             if (alphabet.includes(char)){
@@ -149,7 +138,6 @@ class Word {
 
     allPossibleSloths(){
         const allPatsCompiled = this.allPatternsCompiled();
-   
         const allWordsCompiled = [];
         allPatsCompiled.forEach((pat)=>{
             if (Word.patternToWord(pat) !== this.value && !allWordsCompiled.includes(Word.patternToWord(pat))){
@@ -158,9 +146,6 @@ class Word {
         })
         return allWordsCompiled;
     }
-
-
-    
 }
 
 
