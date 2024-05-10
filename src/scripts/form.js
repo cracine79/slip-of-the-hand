@@ -1,11 +1,11 @@
 import Session from "./session.js"
 
 function handleWord (event){
+    const submit = document.getElementById('submit');
+    submit.disabled = true;
+
     event.preventDefault();
 
-
-    
-    
     const clippy = document.getElementById('clippy');
     if (clippy) {
     clippy.style.display = "none"
@@ -37,6 +37,7 @@ function handleWord (event){
     rules.style.display = 'none';
     const home = document.getElementById('instructions');
     home.style.display = 'inline'
+    home.disabled = true;
     session.generateSlothsArray();
     const header = document.getElementById('slHeader')
     const listBox = document.getElementById('list-box')
@@ -47,6 +48,7 @@ function handleWord (event){
         keyToppers[i].style.display = 'none'
     }
     document.getElementById('entry-box').value = "";
+
 }
 
 

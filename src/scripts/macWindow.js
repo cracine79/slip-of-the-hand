@@ -182,7 +182,7 @@ class MacWindow {
         leftHand.style.paddingTop = "100px"
     }
 
-
+    
  
     waitForMs(ms){
         return new Promise(resolve => setTimeout(resolve, ms)) 
@@ -191,7 +191,8 @@ class MacWindow {
     
 
     async fillIntro(){
-    
+        const submit = document.getElementById('submit')
+        const rules = document.getElementById('rules')
       
         this.playClicking()
 
@@ -240,10 +241,14 @@ class MacWindow {
         await this.typeWords(intro3, para3)
         this.typing.pause()
 
+        submit.disabled = false;
+        rules.disabled = false;
     }
 
 }
 
+const submit = document.getElementById('submit')
+const rules = document.getElementById('rules')
 
 
 
@@ -259,7 +264,12 @@ const form = document.getElementById('getSloth')
 const parchment = document.getElementById('text-box')
 const header = document.getElementById('welcomeToSloth')
 const startupSound = new Audio('./sounds/Startup.wav')
+
+
 async function startupSequence (){
+
+    submit.disabled = true;
+    rules.disabled = true;
     await mWind.waitForMs(500)
     startupImage.style.display = "block";
     startupSound.play()

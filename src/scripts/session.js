@@ -88,15 +88,23 @@ class Session {
             danceSloth.src="./images/200w.gif";
             slHeader.append(danceSloth)
 
+            const home = document.getElementById('instructions');
+            const submit = document.getElementById('submit');
+            home.disabled = false;
+            submit.disabled = false;
+
         } else {
 
             const otherSloths = document.createElement('p');
             otherSloths.id = "otherSloths"
             slHeader.append(otherSloths);
 
-                
-            let youMighta = `If you had mispositioned one or both hands, there are ${slothArray.length} possible SlotHs you could have typed:`
-                
+            let youMighta = "";
+            if (slothArray.length === 1){
+                youMighta = "WOW!! If you had mispositioned one or both hands, there is only ONE possible resulting SlotH:"
+            } else {
+                youMighta = `If you had mispositioned one or both hands, there are ${slothArray.length} possible SlotHs you could have typed:`
+            }
             resultWindow.playClicking()
             await resultWindow.typeWords(youMighta, otherSloths)
             resultWindow.typing.pause()
@@ -185,13 +193,16 @@ class Session {
                 clippy.style.display = "flex"
             } else {
                 const clippy = document.createElement('div')
-                clippy.id = "clippy"
-               
+                clippy.id = "clippy"               
                 lists.append(clippy)
                 clippy.style.display = "flex"
             }
-            
+            const home = document.getElementById('instructions');
+            const submit = document.getElementById('submit');
+            home.disabled = false;
+            submit.disabled = false;
         }
+     
     }
 
 
@@ -250,7 +261,7 @@ modalWrapper.addEventListener('click', (e) => {
     modalWrapper.style.display = "none"
 })
 
-let instructions = document.getElementById('instructions')
+const instructions = document.getElementById('instructions')
 let introBox = document.getElementById('intro-box');
 
 instructions.addEventListener('click', (e) => {
@@ -343,11 +354,17 @@ handPosButton.addEventListener('click', handleSlipExp)
 const handPosText = document.getElementById('handpos-text')
 const handPosText2 = document.getElementById('handpos-text2')
 const expWindow = new MacWindow();
+const submit = document.getElementById('submit');
+const backRules = document.getElementById('backRules');
 
 async function handleSlipExp (){
+    backRules.disabled = true;
+    submit.disabled = true;    
+    instructions.disabled = true;
     clearExpPage();
     const nextRules = document.getElementById('next');
     nextRules.style.display = "block";
+    nextRules.disabled = true;
     
     const handPosBox = document.getElementById('handpos-box');
 
@@ -505,13 +522,18 @@ async function handleSlipExp (){
     rightHand.style.marginLeft = "0px"
     await expWindow.waitForMs(400);
     keyboard.className = "unpressed";
+    
+    instructions.disabled = false;
+    nextRules.disabled = false;
+    submit.disabled = false;   
+    backRules.disabled = false;
 }
 
 const handPosBox = document.getElementById('handpos-box')
 const handPosBox2 = document.getElementById('handpos-box2')
 const previousRules = document.getElementById('previous')
 
-const backRules = document.getElementById('backRules');
+
 backRules.addEventListener('click', (e) =>{
     handPosBox.style.display = "none";
     const explanationBox = document.getElementById('explanation-box');
@@ -569,10 +591,14 @@ nextRules.addEventListener('click', expNextPage);
 
 
 async function expNextPage(){
+    backRules.disabled = true;
+    submit.disabled = true;    
+    instructions.disabled = true;
     handPosText.style.display = "none";
     handPosText2.style.display = 'inline';
     nextRules.style.display = "none"
     previousRules.style.display = "block"
+    previousRules.disabled = true;
 
     const exp4 = document.createElement('span');
     
@@ -645,6 +671,11 @@ async function expNextPage(){
     expWindow.playClicking();
     await expWindow.typeWords(exp9Words, exp9);
     expWindow.typing.pause();
+
+    backRules.disabled = false;
+    submit.disabled = false;    
+    instructions.disabled = false;
+    previousRules.disabled = false;
 }
 
 
@@ -668,6 +699,7 @@ previousRules.addEventListener('click', (e)=>{
     handPosText.style.display = "block";
     previousRules.style.display = "none";
     nextRules.style.display = "block";
+    
 
 })
     const slothGenBox = document.getElementById("slothgen-box");
@@ -683,6 +715,11 @@ const slothCatButton = document.getElementById('slothCatButton');
 slothCatButton.addEventListener('click', handleCatButton)
 
 async function handleCatButton (){
+    submit.disabled = true;
+    const home = document.getElementById('instructions');
+    home.disabled = true;
+    backRules2.disabled = true;
+
     clearExpPage();
     for (let i = 0; i<slothCatText.children.length; i++){
         slothCatText.children[i].innerHTML = "";
@@ -814,16 +851,9 @@ async function handleCatButton (){
     await expWindow.typeWords(class9Words, class9);
     expWindow.typing.pause();
 
-  
-
-
-
-
-
-
+    submit.disabled = false;
+    home.disabled = false;
+    backRules2.disabled = false;
 }
-
-
-
 
 export default Session
