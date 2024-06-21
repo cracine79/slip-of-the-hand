@@ -936,7 +936,6 @@ h2 {
   display: block;
   width: 400px;
   height: 385px;
-  border: black, 1px, solid;
   position: absolute;
 }
 
@@ -944,7 +943,6 @@ h2 {
   display: block;
   width: 380px;
   height: 385px;
-  border: black, 1px, solid;
   position: absolute;
 }
 
