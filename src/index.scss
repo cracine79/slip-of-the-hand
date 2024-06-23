@@ -962,6 +962,20 @@ h2{
     position: absolute;
 }
 
+#button{
+    padding: 10px;
+    padding-top: 12px;
+    border: solid 1px black;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+}
+
+#button:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
 #lh_unpressed {
     content: url(../images/Hands/LH/leftHandUnpressed.png);
 }

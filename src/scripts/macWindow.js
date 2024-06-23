@@ -264,11 +264,11 @@ const form = document.getElementById('getSloth')
 const parchment = document.getElementById('text-box')
 const header = document.getElementById('welcomeToSloth')
 const startupSound = new Audio('./sounds/Startup.wav')
-
+const button = document.getElementById('button')
 
 async function startupSequence (){
-
-    submit.disabled = true;
+    button.style.display='none';
+    submit.disabled = true; 
     rules.disabled = true;
     await mWind.waitForMs(500)
     startupImage.style.display = "block";
@@ -288,7 +288,8 @@ async function startupSequence (){
     mWind.fillIntro()
 }
 
-startupSequence();
+button.addEventListener("click",((e)=> startupSequence()))
+// startupSequence();
 
 
 
