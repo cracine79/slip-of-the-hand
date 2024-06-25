@@ -868,6 +868,32 @@ h2{
     position: absolute;
 }
 
+#modal-inner-wrap{
+    height: auto;
+    width: auto;
+    /* background-color: blue; */
+    display: inline-block;
+}
+#modal-close{
+    position: absolute;
+    margin-top: 102px;
+    margin-left: 350px;
+    font-size: 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    padding-bottom: 1px;
+}
+
+#modal-close:hover{
+    cursor: pointer;
+}
+
 #n_topper {
     margin-left: 380px;
     margin-top: 166px;
