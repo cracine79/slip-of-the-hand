@@ -140,7 +140,15 @@ class Word {
         const allPatsCompiled = this.allPatternsCompiled();
         const allWordsCompiled = [];
         allPatsCompiled.forEach((pat)=>{
-            if (Word.patternToWord(pat) !== this.value && !allWordsCompiled.includes(Word.patternToWord(pat))){
+            const testWord = Word.patternToWord(pat)
+            const symbols = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "[", "-", ";", ","];
+            let hasSymbols = false;
+            symbols.forEach((thing)=>{
+                if (testWord.includes(thing)){
+                    hasSymbols = true
+                }
+            });
+            if (testWord !== this.value && !allWordsCompiled.includes(testWord) && hasSymbols == false){
             allWordsCompiled.push(Word.patternToWord(pat))
             }
         })

@@ -10,8 +10,9 @@ class Session {
     
     async generateSlothsArray() {
         let sloths = this.word.allPossibleSloths();
-        let longSloths = sloths.filter(function(el) {return el.length > 1 && !el.includes(" ")})
-       
+        
+        let longSloths = sloths.filter(function(el) {
+            return el.length > 1 && !el.includes(" ")})
         const slothPromises = longSloths.map(async (word) => {
             try {
                 const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
